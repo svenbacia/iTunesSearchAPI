@@ -15,6 +15,8 @@
 		26E61AED1C8252C200538C5E /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AEC1C8252C200538C5E /* Queue.swift */; };
 		26E61AEF1C82563300538C5E /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AEE1C82563300538C5E /* Country.swift */; };
 		26E61AF11C82580100538C5E /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AF01C82580100538C5E /* Media.swift */; };
+		26E61AF31C82593900538C5E /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AF21C82593900538C5E /* Options.swift */; };
+		26E61AF51C82598C00538C5E /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AF41C82598C00538C5E /* Language.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,8 @@
 		26E61AEC1C8252C200538C5E /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		26E61AEE1C82563300538C5E /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		26E61AF01C82580100538C5E /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
+		26E61AF21C82593900538C5E /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		26E61AF41C82598C00538C5E /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +87,12 @@
 			children = (
 				26E61AA61C823EF600538C5E /* iTunesSearchAPI.h */,
 				26E61AB31C82403E00538C5E /* iTunesSearchAPI.swift */,
+				26E61AF21C82593900538C5E /* Options.swift */,
 				26E61AEA1C824FA500538C5E /* Error.swift */,
 				26E61AEC1C8252C200538C5E /* Queue.swift */,
 				26E61AEE1C82563300538C5E /* Country.swift */,
 				26E61AF01C82580100538C5E /* Media.swift */,
+				26E61AF41C82598C00538C5E /* Language.swift */,
 				26E61AA81C823EF600538C5E /* Info.plist */,
 			);
 			path = iTunesSearchAPI;
@@ -212,7 +218,9 @@
 				26E61AEF1C82563300538C5E /* Country.swift in Sources */,
 				26E61AEB1C824FA500538C5E /* Error.swift in Sources */,
 				26E61AED1C8252C200538C5E /* Queue.swift in Sources */,
+				26E61AF51C82598C00538C5E /* Language.swift in Sources */,
 				26E61AB41C82403E00538C5E /* iTunesSearchAPI.swift in Sources */,
+				26E61AF31C82593900538C5E /* Options.swift in Sources */,
 				26E61AF11C82580100538C5E /* Media.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
