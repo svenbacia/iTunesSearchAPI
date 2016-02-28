@@ -80,6 +80,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		26D37BD81C832A0600A65340 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26E61AA61C823EF600538C5E /* iTunesSearchAPI.h */,
+				26E61AA81C823EF600538C5E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		26E61A991C823EF600538C5E = {
 			isa = PBXGroup;
 			children = (
@@ -103,7 +112,6 @@
 		26E61AA51C823EF600538C5E /* iTunesSearchAPI */ = {
 			isa = PBXGroup;
 			children = (
-				26E61AA61C823EF600538C5E /* iTunesSearchAPI.h */,
 				26E61AB31C82403E00538C5E /* iTunesSearchAPI.swift */,
 				26E61AF21C82593900538C5E /* Options.swift */,
 				26E61AEA1C824FA500538C5E /* Error.swift */,
@@ -112,7 +120,7 @@
 				26E61AF01C82580100538C5E /* Media.swift */,
 				26E61AF41C82598C00538C5E /* Language.swift */,
 				26D37BD61C83037900A65340 /* Entity.swift */,
-				26E61AA81C823EF600538C5E /* Info.plist */,
+				26D37BD81C832A0600A65340 /* Supporting Files */,
 			);
 			path = iTunesSearchAPI;
 			sourceTree = "<group>";
@@ -361,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -404,7 +412,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,6 +432,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = iTunesSearchAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.svenbacia.iTunesSearchAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -442,6 +451,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = iTunesSearchAPI/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.svenbacia.iTunesSearchAPI;
 				PRODUCT_NAME = "$(TARGET_NAME)";
