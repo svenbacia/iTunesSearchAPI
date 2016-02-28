@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26D37BD71C83037900A65340 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D37BD61C83037900A65340 /* Entity.swift */; };
 		26E61AA71C823EF600538C5E /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26E61AA61C823EF600538C5E /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26E61AB41C82403E00538C5E /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61AB31C82403E00538C5E /* iTunesSearchAPI.swift */; };
 		26E61ABC1C8240ED00538C5E /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E61ABB1C8240ED00538C5E /* iTunesSearchAPITests.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26D37BD61C83037900A65340 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		26E61AA31C823EF600538C5E /* iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26E61AA61C823EF600538C5E /* iTunesSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iTunesSearchAPI.h; sourceTree = "<group>"; };
 		26E61AA81C823EF600538C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				26E61AEE1C82563300538C5E /* Country.swift */,
 				26E61AF01C82580100538C5E /* Media.swift */,
 				26E61AF41C82598C00538C5E /* Language.swift */,
+				26D37BD61C83037900A65340 /* Entity.swift */,
 				26E61AA81C823EF600538C5E /* Info.plist */,
 			);
 			path = iTunesSearchAPI;
@@ -219,6 +222,7 @@
 				26E61AEB1C824FA500538C5E /* Error.swift in Sources */,
 				26E61AED1C8252C200538C5E /* Queue.swift in Sources */,
 				26E61AF51C82598C00538C5E /* Language.swift in Sources */,
+				26D37BD71C83037900A65340 /* Entity.swift in Sources */,
 				26E61AB41C82403E00538C5E /* iTunesSearchAPI.swift in Sources */,
 				26E61AF31C82593900538C5E /* Options.swift in Sources */,
 				26E61AF11C82580100538C5E /* Media.swift in Sources */,

@@ -17,6 +17,11 @@ public struct Options {
   /// The media type you want to search for. The default is all.
   public let media: Media?
   
+  /// The type of results you want returned, relative to the specified media type. 
+  /// For example: movieArtist for a movie media type search. 
+  /// The default is the track entity associated with the specified media type.
+  public let entity: Entity?
+  
   /// The number of search results you want the iTunes Store to return. The default is 50. The minimum is 1, the maximum 200.
   public let limit: Int?
   
@@ -28,9 +33,10 @@ public struct Options {
   
   // MARK: - Init
   
-  public init(country: Country? = nil, media: Media? = nil, limit: Int? = nil, language: Language? = nil, includeExplicitContent: Bool? = nil) {
+  public init(country: Country? = nil, media: Media? = nil, entity: Entity? = nil, limit: Int? = nil, language: Language? = nil, includeExplicitContent: Bool? = nil) {
     self.country  = country
     self.media    = media
+    self.entity   = entity
     self.limit    = limit
     self.language = language
     self.includeExplicitContent = includeExplicitContent
