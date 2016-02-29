@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// The media type you want to search for. The default is all.
 public enum Media: String {
   case Movie      = "movie"
   case Podcast    = "podcast"
