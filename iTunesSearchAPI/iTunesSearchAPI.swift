@@ -22,15 +22,15 @@ public final class iTunesSearchAPI {
   
   // MARK: - Search Function
   
-  public func search(search: String, completion: (JSON?, Error?) -> Void) {
+  public func searchFor(search: String, mediaType: Media? = nil, completion: (JSON?, Error?) -> Void) {
     
     // encode search term
-    guard let encodedString = URLEscapedString(search) else {
+    guard let escapedString = URLEscapedString(search) else {
       completion(nil, .InvalidSearchTerm)
       return
     }
     
-    let term = NSURLQueryItem(name: "term", value: encodedString)
+    let term = NSURLQueryItem(name: "term", value: escapedString)
     
     // build url
     guard let url = URLWithQueryItems([term]) else {
@@ -38,6 +38,7 @@ public final class iTunesSearchAPI {
       return
     }
     
+    // create data task
     let task = NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
       
       guard let httpResponse = response as? NSHTTPURLResponse else { return }
@@ -55,6 +56,7 @@ public final class iTunesSearchAPI {
       mainQueue { completion(json, nil) }
     }
     
+    // start task
     task.resume()
   }
   
