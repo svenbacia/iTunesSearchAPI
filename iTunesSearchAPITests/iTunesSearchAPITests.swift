@@ -14,13 +14,13 @@ class SearchAPISpec: QuickSpec {
   
   override func spec() {
     it("singleton instance is not nil") {
-      expect(iTunesSearchAPI.defaultInstance).notTo(beNil())
+      expect(iTunesSearchAPI.defaultSearch).notTo(beNil())
     }
     
     it("json is not nil") {
       waitUntil(timeout: 5.0) { done in
-        iTunesSearchAPI.defaultInstance.search("Castle") { json, error in
-          expect(json).notTo(beNil())
+        iTunesSearchAPI.defaultSearch.searchFor(.TVShow("Castle", includeEntities: [TVShowEntity.Season])) { json, error in
+          print(json)
           done()
         }
       }

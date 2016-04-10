@@ -14,7 +14,7 @@ public final class iTunesSearchAPI {
   
   // MARK: - Singleton Instance
   
-  public static let defaultInstance = iTunesSearchAPI()
+  public static let defaultSearch = iTunesSearchAPI()
   
   // MAKR: - Properties
   
@@ -22,21 +22,19 @@ public final class iTunesSearchAPI {
   
   // MARK: - Search Function
   
-  public func searchFor(search: String, mediaType: Media? = nil, completion: (JSON?, Error?) -> Void) {
+  public func searchFor(media: Media, options: Options? = nil, completion: (JSON?, Error?) -> Void) {
     
-    // encode search term
-    guard let escapedString = URLEscapedString(search) else {
-      completion(nil, .InvalidSearchTerm)
-      return
-    }
-    
-    let term = NSURLQueryItem(name: "term", value: escapedString)
-    
+    // query items for current search
+    let queryItems = media.queryItems
+
     // build url
-    guard let url = URLWithQueryItems([term]) else {
+    guard let url = URLWithQueryItems(queryItems) else {
       completion(nil, .InvalidURL)
       return
     }
+    
+    // print request
+    print("Request url: \(url)")
     
     // create data task
     let task = NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
