@@ -68,9 +68,5 @@ public final class iTunesSearchAPI {
     components.queryItems = items
     return components.URL
   }
-  
-  private func URLEscapedString(string: String) -> String? {
-    return string.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
-  }
 }
 

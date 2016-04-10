@@ -75,7 +75,7 @@ extension Media: QueryItemConvertible {
   
   private func queryItemsFor(title: String, includedEntities entities: Entity?) -> [NSURLQueryItem] {
     // make sure that the title is valid to use in an url
-    guard let escapedTitle = title.URLEscapedString else { return [] }
+    guard let escapedTitle = title.URLEscaped else { return [] }
     
     // create query item for the search term
     let termQueryItem = NSURLQueryItem(name: "term", value: escapedTitle)
