@@ -19,7 +19,7 @@ class SearchAPISpec: QuickSpec {
     
     it("json is not nil") {
       waitUntil(timeout: 5.0) { done in
-        iTunesSearchAPI.defaultSearch.searchFor(.TVShow("Castle", includeEntities: [TVShowEntity.TVSeason])) { json, error in
+        iTunesSearchAPI.defaultSearch.searchFor(.TVShow("Castle", includeEntities: [TVShowEntity.Season])) { json, error in
           print(json)
           done()
         }
