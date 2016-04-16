@@ -26,7 +26,11 @@ public final class iTunesSearchAPI {
     
     guard let URLEscapedTerm = term.URLEscaped else { completion(nil, .InvalidSearchTerm); return }
     
-    guard let URL = URLWithParameters(type.parameters) else { completion(nil, .InvalidURL); return }
+    let typeParameter = type.parameters
+    let termParameter = ["term" : URLEscapedTerm]
+    let parameters    = typeParameter.union(termParameter)
+    
+    guard let URL = URLWithParameters(parameters) else { completion(nil, .InvalidURL); return }
     
     // print request
     print("Request url: \(URL)")
