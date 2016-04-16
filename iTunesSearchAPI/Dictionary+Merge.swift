@@ -14,4 +14,10 @@ extension Dictionary {
       self[key] = value
     }
   }
+  
+  func union(dictionary: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
+    var dict = self
+    dict.unionInPlace(dictionary)
+    return dict
+  }
 }
