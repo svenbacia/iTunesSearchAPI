@@ -1,5 +1,4 @@
 project "iTunesSearchAPI.xcodeproj"
 scheme "iTunesSearchAPI-iOS"
-device "iPhone 6"
 code_coverage true
 output_types ""
