@@ -4,3 +4,5 @@
 [![Version](https://img.shields.io/cocoapods/v/iTunesSearchAPI.svg?style=flat)](http://cocoapods.org/pods/iTunesSearchAPI)
 [![License](https://img.shields.io/cocoapods/l/iTunesSearchAPI.svg?style=flat)](http://cocoapods.org/pods/iTunesSearchAPI)
 [![Platform](https://img.shields.io/cocoapods/p/iTunesSearchAPI.svg?style=flat)](http://cocoapods.org/pods/iTunesSearchAPI)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+
