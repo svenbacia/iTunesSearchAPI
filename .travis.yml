@@ -10,7 +10,7 @@ before_script:
  - carthage bootstrap --platform iOS
 
 script:
-  - xcodebuild test -workspace iTunesSearchAPI.xcworkspace -scheme "iTunesSearchAPI-iOS" -sdk iphonesimulator
+  - xcodebuild test -project iTunesSearchAPI.xcodeproj -scheme "iTunesSearchAPI-iOS" -sdk iphonesimulator
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
