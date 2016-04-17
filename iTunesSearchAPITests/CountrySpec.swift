@@ -24,7 +24,6 @@ class CountrySpec: QuickSpec {
         expect(Country.Japanese.code).to(equal("ja"))
         expect(Country.Polish.code).to(equal("pl"))
       }
-      
     }
   }
 }

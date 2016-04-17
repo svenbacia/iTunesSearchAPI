@@ -14,6 +14,7 @@
 		264591CB1CC3C94200E0DF4D /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2639386F1CC3C51A00C037CE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		264591CC1CC3C94200E0DF4D /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 263938701CC3C51A00C037CE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		264591CE1CC3CCE700E0DF4D /* SearchSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264591CD1CC3CCE700E0DF4D /* SearchSpec.swift */; };
+		264591D01CC3CEB800E0DF4D /* OptionsSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264591CF1CC3CEB800E0DF4D /* OptionsSpec.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26B1A7D51CC3846D00A8B8C1 /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunesSearchAPI.swift */; };
 		26B1A7D61CC3846D00A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
@@ -92,6 +93,7 @@
 		263938701CC3C51A00C037CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		264591C41CC3C90400E0DF4D /* CountrySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountrySpec.swift; sourceTree = "<group>"; };
 		264591CD1CC3CCE700E0DF4D /* SearchSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSpec.swift; sourceTree = "<group>"; };
+		264591CF1CC3CEB800E0DF4D /* OptionsSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsSpec.swift; sourceTree = "<group>"; };
 		26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iTunesSearchAPI.h; path = Source/iTunesSearchAPI.h; sourceTree = "<group>"; };
 		26B1A7A61CC3816200A8B8C1 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Source/Info-iOS.plist"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				264591CD1CC3CCE700E0DF4D /* SearchSpec.swift */,
 				264591C41CC3C90400E0DF4D /* CountrySpec.swift */,
+				264591CF1CC3CEB800E0DF4D /* OptionsSpec.swift */,
 				2637BD1E1CC3C86D001915C8 /* Info.plist */,
 			);
 			path = iTunesSearchAPITests;
@@ -481,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264591D01CC3CEB800E0DF4D /* OptionsSpec.swift in Sources */,
 				264591CE1CC3CCE700E0DF4D /* SearchSpec.swift in Sources */,
 				264591C51CC3C90400E0DF4D /* CountrySpec.swift in Sources */,
 			);
