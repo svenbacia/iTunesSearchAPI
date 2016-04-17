@@ -6,7 +6,9 @@
 //  Copyright © 2016 Sven Bacia. All rights reserved.
 //
 
-@testable import iTunesSearchAPI
+@testable
+import iTunesSearchAPI
+
 import Quick
 import Nimble
 
