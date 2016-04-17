@@ -10,16 +10,17 @@ import Foundation
 
 /// The media type you want to search for. The default is all.
 public enum Media {
-  case Movie(String, includeEntities: Entity?)
-  case Podcast(String, includeEntities: Entity?)
-  case Music(String, includeEntities: Entity?)
-  case MusicVideo(String, includeEntities: Entity?)
-  case AudioBook(String, includeEntities: Entity?)
-  case ShortFilm(String, includeEntities: Entity?)
-  case TVShow(String, includeEntities: TVShowEntity?)
-  case Software(String, includeEntities: Entity?)
-  case eBook(String, includeEntities: Entity?)
-  case Everything(String, includeEntities: Entity?)
+  
+  case Movie(Entity?)
+  case Podcast(Entity?)
+  case Music(Entity?)
+  case MusicVideo(Entity?)
+  case AudioBook(Entity?)
+  case ShortFilm(Entity?)
+  case TVShow(Entity?)
+  case Software(Entity?)
+  case eBook(Entity?)
+  case All(Entity?)
   
   private var value: String {
     switch self {
@@ -41,57 +42,47 @@ public enum Media {
       return "software"
     case .eBook:
       return "ebook"
-    case .Everything:
+    case .All:
       return "all"
+    }
+  }
+  
+  private var entity: Entity? {
+    switch self {
+    case .Movie(let entity):
+      return entity
+    case .Podcast(let entity):
+      return entity
+    case .Music(let entity):
+      return entity
+    case .MusicVideo(let entity):
+      return entity
+    case .AudioBook(let entity):
+      return entity
+    case .ShortFilm(let entity):
+      return entity
+    case .TVShow(let entity):
+      return entity
+    case .Software(let entity):
+      return entity
+    case .eBook(let entity):
+      return entity
+    case .All(let entity):
+      return entity
     }
   }
 }
 
-extension Media: QueryItemConvertible {
-  public var queryItems: [NSURLQueryItem] {
-    switch self {
-    case .Movie(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .Podcast(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .Music(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .MusicVideo(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .AudioBook(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .ShortFilm(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .TVShow(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .Software(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .eBook(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    case .Everything(let title, let entities):
-      return queryItemsFor(title, includedEntities: entities)
-    }
-  }
-  
-  private func queryItemsFor(title: String, includedEntities entities: Entity?) -> [NSURLQueryItem] {
-    // make sure that the title is valid to use in an url
-    guard let escapedTitle = title.URLEscaped else { return [] }
+extension Media {
+
+  var parameters: [String : String] {
     
-    // create query item for the search term
-    let termQueryItem = NSURLQueryItem(name: "term", value: escapedTitle)
+    var media = ["media" : value]
     
-    // create query item for selected media type
-    let mediaQueryItem = NSURLQueryItem(name: "media", value: value)
-    
-    // add term and media query item to one array
-    let requiredQueryItems = [termQueryItem, mediaQueryItem]
-    
-    // create query items for possible entities when needed
-    if let entityQueryItems = entities?.queryItems {
-      return requiredQueryItems + entityQueryItems
+    if let entity = entity?.parameter {
+      media.unionInPlace(entity)
     }
     
-    // otherwise return only the term
-    return requiredQueryItems
+    return media
   }
 }

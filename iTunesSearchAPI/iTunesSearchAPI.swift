@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias JSON = [String : AnyObject]
+public typealias SearchCompletionHandler = ([String : AnyObject]?, Error?) -> Void
 
 public final class iTunesSearchAPI {
   
@@ -22,37 +22,23 @@ public final class iTunesSearchAPI {
   
   // MARK: - Search Function
   
-  public func searchFor(media: Media, options: Options? = nil, completion: (JSON?, Error?) -> Void) {
+  public func searchFor(term: String, ofType type: Media = .All(nil), options: Options? = nil, completion: SearchCompletionHandler) {
     
-    // query items for current search
-    let queryItems = media.queryItems
-
-    // build url
-    guard let url = URLWithQueryItems(queryItems) else {
-      completion(nil, .InvalidURL)
-      return
-    }
+    // escape search string
+    guard let URLEscapedTerm = term.URLEscaped else { completion(nil, .InvalidSearchTerm); return }
     
-    // print request
-    print("Request url: \(url)")
+    // build parameter dictionary
+    let typeParameter = type.parameters
+    let termParameter = ["term" : URLEscapedTerm]
+    let parameters    = typeParameter.union(termParameter)
+    
+    guard let URL = URLWithParameters(parameters) else { completion(nil, .InvalidURL); return }
+    
+    // print request for debug purposes
+    print("Request url: \(URL)")
     
     // create data task
-    let task = NSURLSession.sharedSession().dataTaskWithURL(url) { data, response, error in
-      
-      guard let httpResponse = response as? NSHTTPURLResponse else { return }
-      guard 200...299 ~= httpResponse.statusCode else {
-        mainQueue { completion(nil, .ServerError(httpResponse.statusCode)) }
-        return
-      }
-      
-      guard let data = data else { return }
-      guard let json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? JSON else {
-        mainQueue { completion(nil, .InvalidJSON) }
-        return
-      }
-      
-      mainQueue { completion(json, nil) }
-    }
+    let task = searchTaskWith(URL, completion: completion)
     
     // start task
     task.resume()
@@ -60,12 +46,36 @@ public final class iTunesSearchAPI {
   
   // MARK: - Helper
   
-  private func URLWithQueryItems(items: [NSURLQueryItem]) -> NSURL? {
+  private func searchTaskWith(URL: NSURL, completion: SearchCompletionHandler) -> NSURLSessionDataTask {
+    return NSURLSession.sharedSession().dataTaskWithURL(URL) { data, response, error in
+      
+      guard let httpResponse = response as? NSHTTPURLResponse else {
+        mainQueue { completion(nil, .ServerError(0)) }
+        return
+      }
+      
+      guard 200...299 ~= httpResponse.statusCode else {
+        mainQueue { completion(nil, .ServerError(httpResponse.statusCode)) }
+        return
+      }
+      
+      guard let
+        data = data,
+        json = try? NSJSONSerialization.JSONObjectWithData(data, options: .AllowFragments) as? [String : AnyObject] else {
+          mainQueue { completion(nil, .InvalidJSON) }
+          return
+      }
+      
+      mainQueue { completion(json, nil) }
+    }
+  }
+  
+  private func URLWithParameters(parameters: [String : String]) -> NSURL? {
     let components  = NSURLComponents()
     components.scheme = "https"
     components.host   = base
     components.path   = "/search"
-    components.queryItems = items
+    components.queryItems = parameters.map { NSURLQueryItem(name: $0.0, value: $0.1) }
     return components.URL
   }
 }
