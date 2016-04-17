@@ -33,7 +33,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "26E61AB81C8240ED00538C5E"
+               BlueprintIdentifier = "2637BD191CC3C86D001915C8"
                BuildableName = "iTunesSearchAPITests.xctest"
                BlueprintName = "iTunesSearchAPITests"
                ReferencedContainer = "container:iTunesSearchAPI.xcodeproj">
