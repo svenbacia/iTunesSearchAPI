@@ -24,15 +24,17 @@ public final class iTunesSearchAPI {
   
   public func searchFor(term: String, ofType type: Media = .All(nil), options: Options? = nil, completion: SearchCompletionHandler) {
     
+    // escape search string
     guard let URLEscapedTerm = term.URLEscaped else { completion(nil, .InvalidSearchTerm); return }
     
+    // build parameter dictionary
     let typeParameter = type.parameters
     let termParameter = ["term" : URLEscapedTerm]
     let parameters    = typeParameter.union(termParameter)
     
     guard let URL = URLWithParameters(parameters) else { completion(nil, .InvalidURL); return }
     
-    // print request
+    // print request for debug purposes
     print("Request url: \(URL)")
     
     // create data task
@@ -40,7 +42,6 @@ public final class iTunesSearchAPI {
     
     // start task
     task.resume()
-    
   }
   
   // MARK: - Helper
@@ -52,7 +53,6 @@ public final class iTunesSearchAPI {
         mainQueue { completion(nil, .ServerError(0)) }
         return
       }
-      
       
       guard 200...299 ~= httpResponse.statusCode else {
         mainQueue { completion(nil, .ServerError(httpResponse.statusCode)) }
@@ -75,6 +75,7 @@ public final class iTunesSearchAPI {
     components.scheme = "https"
     components.host   = base
     components.path   = "/search"
+    components.queryItems = parameters.map { NSURLQueryItem(name: $0.0, value: $0.1) }
     return components.URL
   }
 }
