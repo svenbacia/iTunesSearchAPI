@@ -13,13 +13,16 @@ import Nimble
 class SearchAPISpec: QuickSpec {
   
   override func spec() {
+    
+    let search = iTunesSearchAPI.defaultSearch
+    
     it("singleton instance is not nil") {
-      expect(iTunesSearchAPI.defaultSearch).notTo(beNil())
+      expect(search).notTo(beNil())
     }
     
-    it("json is not nil") {
+    it("response json is not nil") {
       waitUntil(timeout: 5.0) { done in
-        iTunesSearchAPI.defaultSearch.searchFor(.TVShow("Castle", includeEntities: [TVShowEntity.Season])) { json, error in
+        search.searchFor("Castle", ofType: .TVShow(Entity.TVSeason)) { json, error in
           print(json)
           done()
         }
