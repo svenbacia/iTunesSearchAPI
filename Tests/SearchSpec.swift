@@ -1,8 +1,8 @@
 //
-//  iTunesSearchAPITests.swift
-//  iTunesSearchAPITests
+//  SearchSpec.swift
+//  iTunesSearchAPI
 //
-//  Created by Sven Bacia on 27.02.16.
+//  Created by Sven Bacia on 17.04.16.
 //  Copyright © 2016 Sven Bacia. All rights reserved.
 //
 
@@ -12,7 +12,7 @@ import iTunesSearchAPI
 import Quick
 import Nimble
 
-class SearchAPISpec: QuickSpec {
+class SearchSpec: QuickSpec {
   
   override func spec() {
     
@@ -33,3 +33,4 @@ class SearchAPISpec: QuickSpec {
     
   }
 }
+
