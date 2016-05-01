@@ -23,7 +23,7 @@ class SearchSpec: QuickSpec {
       }
       
       it("returns a json response") {
-        waitUntil(timeout: 3.0) { done in
+        waitUntil(timeout: 5.0) { done in
           search.searchFor("Castle", ofType: .TVShow(Entity.TVSeason)) { json, error in
             print(json)
             done()
