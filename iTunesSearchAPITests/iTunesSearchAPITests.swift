@@ -11,11 +11,5 @@ import XCTest
 @testable import iTunesSearchAPI
 
 class iTunesSearchAPITests: XCTestCase {
-  
-  func testSingleton_notNil() {
-    let search = iTunesSearchAPI.defaultSearch
-    XCTAssertNotNil(search)
-  }
 
-    
 }
