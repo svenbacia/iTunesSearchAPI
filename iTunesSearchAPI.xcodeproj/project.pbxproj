@@ -11,6 +11,8 @@
 		26005D321D453B2D003E1326 /* EntitiyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D311D453B2D003E1326 /* EntitiyTests.swift */; };
 		26005D341D453CAC003E1326 /* MediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D331D453CAC003E1326 /* MediaTests.swift */; };
 		26005D361D453D9E003E1326 /* OptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D351D453D9E003E1326 /* OptionsTests.swift */; };
+		26005D381D4545E4003E1326 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D371D4545E4003E1326 /* DictionaryTests.swift */; };
+		26005D3A1D4546EE003E1326 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D391D4546EE003E1326 /* StringTests.swift */; };
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
 		26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,6 +73,8 @@
 		26005D311D453B2D003E1326 /* EntitiyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiyTests.swift; sourceTree = "<group>"; };
 		26005D331D453CAC003E1326 /* MediaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTests.swift; sourceTree = "<group>"; };
 		26005D351D453D9E003E1326 /* OptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTests.swift; sourceTree = "<group>"; };
+		26005D371D4545E4003E1326 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		26005D391D4546EE003E1326 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		2637BD1A1CC3C86D001915C8 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BD1E1CC3C86D001915C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITests.swift; sourceTree = "<group>"; };
@@ -144,6 +148,8 @@
 				26005D311D453B2D003E1326 /* EntitiyTests.swift */,
 				26005D331D453CAC003E1326 /* MediaTests.swift */,
 				26005D351D453D9E003E1326 /* OptionsTests.swift */,
+				26005D371D4545E4003E1326 /* DictionaryTests.swift */,
+				26005D391D4546EE003E1326 /* StringTests.swift */,
 			);
 			path = iTunesSearchAPITests;
 			sourceTree = "<group>";
@@ -459,8 +465,10 @@
 				26005D301D453762003E1326 /* CountryTests.swift in Sources */,
 				26005D321D453B2D003E1326 /* EntitiyTests.swift in Sources */,
 				26005D341D453CAC003E1326 /* MediaTests.swift in Sources */,
+				26005D3A1D4546EE003E1326 /* StringTests.swift in Sources */,
 				26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */,
 				26005D361D453D9E003E1326 /* OptionsTests.swift in Sources */,
+				26005D381D4545E4003E1326 /* DictionaryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
