@@ -12,9 +12,15 @@ public typealias SearchCompletionHandler = ([String : AnyObject]?, Error?) -> Vo
 
 public final class iTunes {
   
-  // MAKR: - Properties
+  // MARK: - Properties
   
   private let base = "itunes.apple.com"
+  
+  // MARK: - Init
+  
+  public init() {
+    
+  }
   
   // MARK: - Search Function
   
