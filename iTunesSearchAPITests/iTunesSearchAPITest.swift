@@ -8,7 +8,7 @@
 
 import XCTest
 
-@testable import iTunesSearchAPI
+//@testable import iTunesSearchAPI
 
 class iTunesSearchAPITest: XCTestCase {
     
