@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26005D301D453762003E1326 /* CountryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D2F1D453762003E1326 /* CountryTests.swift */; };
+		26005D321D453B2D003E1326 /* EntitiyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D311D453B2D003E1326 /* EntitiyTests.swift */; };
+		26005D341D453CAC003E1326 /* MediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D331D453CAC003E1326 /* MediaTests.swift */; };
+		26005D361D453D9E003E1326 /* OptionsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D351D453D9E003E1326 /* OptionsTests.swift */; };
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
-		26722CC71D45349800CD84AD /* iTunesSearchAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITest.swift */; };
+		26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26B1A7D51CC3846D00A8B8C1 /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunesSearchAPI.swift */; };
 		26B1A7D61CC3846D00A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
@@ -63,9 +67,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		26005D2F1D453762003E1326 /* CountryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTests.swift; sourceTree = "<group>"; };
+		26005D311D453B2D003E1326 /* EntitiyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntitiyTests.swift; sourceTree = "<group>"; };
+		26005D331D453CAC003E1326 /* MediaTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MediaTests.swift; sourceTree = "<group>"; };
+		26005D351D453D9E003E1326 /* OptionsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsTests.swift; sourceTree = "<group>"; };
 		2637BD1A1CC3C86D001915C8 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BD1E1CC3C86D001915C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		26722CC61D45349800CD84AD /* iTunesSearchAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITest.swift; sourceTree = "<group>"; };
+		26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITests.swift; sourceTree = "<group>"; };
 		26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iTunesSearchAPI.h; path = Source/iTunesSearchAPI.h; sourceTree = "<group>"; };
 		26B1A7A61CC3816200A8B8C1 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Source/Info-iOS.plist"; sourceTree = "<group>"; };
@@ -131,7 +139,11 @@
 			isa = PBXGroup;
 			children = (
 				2637BD1E1CC3C86D001915C8 /* Info.plist */,
-				26722CC61D45349800CD84AD /* iTunesSearchAPITest.swift */,
+				26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */,
+				26005D2F1D453762003E1326 /* CountryTests.swift */,
+				26005D311D453B2D003E1326 /* EntitiyTests.swift */,
+				26005D331D453CAC003E1326 /* MediaTests.swift */,
+				26005D351D453D9E003E1326 /* OptionsTests.swift */,
 			);
 			path = iTunesSearchAPITests;
 			sourceTree = "<group>";
@@ -444,7 +456,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26722CC71D45349800CD84AD /* iTunesSearchAPITest.swift in Sources */,
+				26005D301D453762003E1326 /* CountryTests.swift in Sources */,
+				26005D321D453B2D003E1326 /* EntitiyTests.swift in Sources */,
+				26005D341D453CAC003E1326 /* MediaTests.swift in Sources */,
+				26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */,
+				26005D361D453D9E003E1326 /* OptionsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
