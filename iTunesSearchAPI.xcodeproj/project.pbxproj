@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
-		264591C81CC3C93300E0DF4D /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2639386F1CC3C51A00C037CE /* Nimble.framework */; };
-		264591C91CC3C93300E0DF4D /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 263938701CC3C51A00C037CE /* Quick.framework */; };
 		26722CC71D45349800CD84AD /* iTunesSearchAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITest.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26B1A7D51CC3846D00A8B8C1 /* iTunesSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunesSearchAPI.swift */; };
@@ -67,8 +65,6 @@
 /* Begin PBXFileReference section */
 		2637BD1A1CC3C86D001915C8 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BD1E1CC3C86D001915C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2639386F1CC3C51A00C037CE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = /Users/sven/Developer/Frameworks/iTunesSearchAPI/Carthage/Build/iOS/Nimble.framework; sourceTree = "<absolute>"; };
-		263938701CC3C51A00C037CE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = /Users/sven/Developer/Frameworks/iTunesSearchAPI/Carthage/Build/iOS/Quick.framework; sourceTree = "<absolute>"; };
 		26722CC61D45349800CD84AD /* iTunesSearchAPITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITest.swift; sourceTree = "<group>"; };
 		26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iTunesSearchAPI.h; path = Source/iTunesSearchAPI.h; sourceTree = "<group>"; };
@@ -97,8 +93,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */,
-				264591C81CC3C93300E0DF4D /* Nimble.framework in Frameworks */,
-				264591C91CC3C93300E0DF4D /* Quick.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,7 +360,10 @@
 				TargetAttributes = {
 					2637BD191CC3C86D001915C8 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = ZG435LD5XK;
+						DevelopmentTeamName = "Sven Bacia";
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 					26B1A7A11CC3816100A8B8C1 = {
 						CreatedOnToolsVersion = 7.3;
@@ -533,6 +530,7 @@
 		2637BD231CC3C86D001915C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -549,6 +547,7 @@
 		2637BD241CC3C86D001915C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
