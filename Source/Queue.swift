@@ -8,6 +8,6 @@
 
 import Foundation
 
-func mainQueue(block: () -> Void) {
-  dispatch_async(dispatch_get_main_queue(), block)
+func mainQueue(_ block: () -> Void) {
+  DispatchQueue.main.async(execute: block)
 }

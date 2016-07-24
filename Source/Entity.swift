@@ -13,41 +13,41 @@ import Foundation
 /// The default is the track entity associated with the specified media type.
 public enum Entity {
   // All
-  case Movie
-  case Album
-  case AllArtist
-  case Podcast
-  case MusicVideo
-  case Mix
-  case Audiobook
-  case TVSeason
-  case AllTrack
+  case movie
+  case album
+  case allArtist
+  case podcast
+  case musicVideo
+  case mix
+  case audiobook
+  case tvSeason
+  case allTrack
   
   // Movie
-  case MovieArtist
+  case movieArtist
   
   // Podcast
-  case PodcastAuthor
+  case podcastAuthor
   
   // Music
-  case MusicArtist
-  case MusicTrack
-  case MusicSong
+  case musicArtist
+  case musicTrack
+  case musicSong
   
   // Audiobook
-  case AudiobookAuthor
+  case audiobookAuthor
   
   // Shortfilm
-  case ShortFilmArtist
-  case ShortFilm
+  case shortFilmArtist
+  case shortFilm
   
   // TVShow
-  case TVEpisode
+  case tvEpisode
   
   // Software
-  case Software
+  case software
   case iPadSoftware
-  case MacSoftware
+  case macSoftware
   
   // eBook
   case eBook
@@ -56,47 +56,47 @@ public enum Entity {
 extension Entity: EntityType {
   public var value: String {
     switch self {
-    case .Movie:
+    case .movie:
       return "movie"
-    case .Album:
+    case .album:
       return "album"
-    case .AllArtist:
+    case .allArtist:
       return "allArtist"
-    case .Podcast:
+    case .podcast:
       return "podcast"
-    case .MusicVideo:
+    case .musicVideo:
       return "musicVideo"
-    case .Mix:
+    case .mix:
       return "mix"
-    case .Audiobook:
+    case .audiobook:
       return "audiobook"
-    case .TVSeason:
+    case .tvSeason:
       return "tvSeason"
-    case .AllTrack:
+    case .allTrack:
       return "allTrack"
-    case .MovieArtist:
+    case .movieArtist:
       return "movieArtist"
-    case .PodcastAuthor:
+    case .podcastAuthor:
       return "podcastAuthor"
-    case .MusicArtist:
+    case .musicArtist:
       return "musicArtist"
-    case .MusicTrack:
+    case .musicTrack:
       return "musicTrack"
-    case .MusicSong:
+    case .musicSong:
       return "musicSong"
-    case .AudiobookAuthor:
+    case .audiobookAuthor:
       return "audiobookAuthor"
-    case .ShortFilmArtist:
+    case .shortFilmArtist:
       return "shortFilmArtist"
-    case .ShortFilm:
+    case .shortFilm:
       return "shortFilm"
-    case .TVEpisode:
+    case .tvEpisode:
       return "tvEpisode"
-    case .Software:
+    case .software:
       return "software"
     case .iPadSoftware:
       return "iPadSoftware"
-    case .MacSoftware:
+    case .macSoftware:
       return "macSoftware"
     case .eBook:
       return "ebook"

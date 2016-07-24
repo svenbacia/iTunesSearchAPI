@@ -9,34 +9,34 @@
 import Foundation
 
 public enum Country {
-  case Chinese
-  case Dutch
-  case English
-  case French
-  case German
-  case Italian
-  case Japanese
-  case Polish
+  case chinese
+  case dutch
+  case english
+  case french
+  case german
+  case italian
+  case japanese
+  case polish
 }
 
 extension Country {
   var code: String {
     switch self {
-    case .Chinese:
+    case .chinese:
       return "zh"
-    case .Dutch:
+    case .dutch:
       return "nl"
-    case .English:
+    case .english:
       return "en"
-    case .French:
+    case .french:
       return "fr"
-    case .German:
+    case .german:
       return "de"
-    case .Italian:
+    case .italian:
       return "it"
-    case .Japanese:
+    case .japanese:
       return "ja"
-    case .Polish:
+    case .polish:
       return "pl"
     }
   }

@@ -8,9 +8,9 @@
 
 import Foundation
 
-public enum Error: ErrorType {
-  case InvalidSearchTerm
-  case InvalidURL
-  case ServerError(Int)
-  case InvalidJSON
+public enum Error: ErrorProtocol {
+  case invalidSearchTerm
+  case invalidURL
+  case serverError(Int)
+  case invalidJSON
 }

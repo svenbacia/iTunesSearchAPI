@@ -11,63 +11,63 @@ import Foundation
 /// The media type you want to search for. The default is all.
 public enum Media {
   
-  case Movie(Entity?)
-  case Podcast(Entity?)
-  case Music(Entity?)
-  case MusicVideo(Entity?)
-  case AudioBook(Entity?)
-  case ShortFilm(Entity?)
-  case TVShow(Entity?)
-  case Software(Entity?)
+  case movie(Entity?)
+  case podcast(Entity?)
+  case music(Entity?)
+  case musicVideo(Entity?)
+  case audioBook(Entity?)
+  case shortFilm(Entity?)
+  case tvShow(Entity?)
+  case software(Entity?)
   case eBook(Entity?)
-  case All(Entity?)
+  case all(Entity?)
   
   private var value: String {
     switch self {
-    case .Movie:
+    case .movie:
       return "movie"
-    case .Podcast:
+    case .podcast:
       return "podcast"
-    case .Music:
+    case .music:
       return "music"
-    case .MusicVideo:
+    case .musicVideo:
       return "musicvideo"
-    case .AudioBook:
+    case .audioBook:
       return "audiobook"
-    case .ShortFilm:
+    case .shortFilm:
       return "shortFilm"
-    case .TVShow:
+    case .tvShow:
       return "tvShow"
-    case .Software:
+    case .software:
       return "software"
     case .eBook:
       return "ebook"
-    case .All:
+    case .all:
       return "all"
     }
   }
   
   private var entity: Entity? {
     switch self {
-    case .Movie(let entity):
+    case .movie(let entity):
       return entity
-    case .Podcast(let entity):
+    case .podcast(let entity):
       return entity
-    case .Music(let entity):
+    case .music(let entity):
       return entity
-    case .MusicVideo(let entity):
+    case .musicVideo(let entity):
       return entity
-    case .AudioBook(let entity):
+    case .audioBook(let entity):
       return entity
-    case .ShortFilm(let entity):
+    case .shortFilm(let entity):
       return entity
-    case .TVShow(let entity):
+    case .tvShow(let entity):
       return entity
-    case .Software(let entity):
+    case .software(let entity):
       return entity
     case .eBook(let entity):
       return entity
-    case .All(let entity):
+    case .all(let entity):
       return entity
     }
   }
