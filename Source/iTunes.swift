@@ -10,11 +10,7 @@ import Foundation
 
 public typealias SearchCompletionHandler = ([String : AnyObject]?, Error?) -> Void
 
-public final class iTunesSearchAPI {
-  
-  // MARK: - Singleton Instance
-  
-  public static let defaultSearch = iTunesSearchAPI()
+public final class iTunes {
   
   // MAKR: - Properties
   
@@ -22,23 +18,22 @@ public final class iTunesSearchAPI {
   
   // MARK: - Search Function
   
-  public func searchFor(_ term: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
-    
+  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
     // escape search string
-    guard let URLEscapedTerm = term.urlEscaped else { completion(nil, .invalidSearchTerm); return }
+    guard let URLEscapedTerm = query.urlEscaped else { completion(nil, .invalidSearchTerm); return }
     
     // build parameter dictionary
     let typeParameter = type.parameters
     let termParameter = ["term" : URLEscapedTerm]
     let parameters    = typeParameter.union(termParameter)
     
-    guard let URL = URLWithParameters(parameters) else { completion(nil, .invalidURL); return }
+    guard let url = URLWithParameters(parameters) else { completion(nil, .invalidURL); return }
     
     // print request for debug purposes
-    print("Request url: \(URL)")
+    print("Request url: \(url)")
     
     // create data task
-    let task = searchTaskWith(URL, completion: completion)
+    let task = searchTask(withURL: url, completion: completion)
     
     // start task
     task.resume()
@@ -46,8 +41,8 @@ public final class iTunesSearchAPI {
   
   // MARK: - Helper
   
-  private func searchTaskWith(_ URL: Foundation.URL, completion: SearchCompletionHandler) -> URLSessionDataTask {
-    return URLSession.shared.dataTask(with: URL) { data, response, error in
+  private func searchTask(withURL url: URL, completion: SearchCompletionHandler) -> URLSessionDataTask {
+    return URLSession.shared.dataTask(with: url) { data, response, error in
       
       guard let httpResponse = response as? HTTPURLResponse else {
         DispatchQueue.main.async { completion(nil, .serverError(0)) }
