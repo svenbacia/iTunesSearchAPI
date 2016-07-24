@@ -25,12 +25,10 @@ public final class iTunes {
   // MARK: - Search Function
   
   public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
-    // escape search string
-    guard let URLEscapedTerm = query.urlEscaped else { completion(nil, .invalidSearchTerm); return }
-    
+
     // build parameter dictionary
     let typeParameter = type.parameters
-    let termParameter = ["term" : URLEscapedTerm]
+    let termParameter = ["term" : query]
     let parameters    = typeParameter.union(termParameter)
     
     guard let url = URLWithParameters(parameters) else { completion(nil, .invalidURL); return }
