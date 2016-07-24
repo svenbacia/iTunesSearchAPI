@@ -25,7 +25,7 @@ public final class iTunesSearchAPI {
   public func searchFor(_ term: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
     
     // escape search string
-    guard let URLEscapedTerm = term.URLEscaped else { completion(nil, .invalidSearchTerm); return }
+    guard let URLEscapedTerm = term.urlEscaped else { completion(nil, .invalidSearchTerm); return }
     
     // build parameter dictionary
     let typeParameter = type.parameters
@@ -50,23 +50,22 @@ public final class iTunesSearchAPI {
     return URLSession.shared.dataTask(with: URL) { data, response, error in
       
       guard let httpResponse = response as? HTTPURLResponse else {
-        mainQueue { completion(nil, .serverError(0)) }
+        DispatchQueue.main.async { completion(nil, .serverError(0)) }
         return
       }
       
       guard 200...299 ~= httpResponse.statusCode else {
-        mainQueue { completion(nil, .serverError(httpResponse.statusCode)) }
+        DispatchQueue.main.async { completion(nil, .serverError(httpResponse.statusCode)) }
         return
       }
       
-      guard let
-        data = data,
-        json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : AnyObject] else {
-          mainQueue { completion(nil, .invalidJSON) }
+      guard let data = data,
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : AnyObject] else {
+              DispatchQueue.main.async { completion(nil, .invalidJSON) }
           return
       }
       
-      mainQueue { completion(json, nil) }
+      DispatchQueue.main.async { completion(json, nil) }
     }
   }
   
