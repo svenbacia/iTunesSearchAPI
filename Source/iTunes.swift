@@ -27,11 +27,8 @@ public final class iTunes {
   public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
 
     // build parameter dictionary
-    let typeParameter = type.parameters
-    let termParameter = ["term" : query]
-    let parameters    = typeParameter.union(termParameter)
-    
-    guard let url = URLWithParameters(parameters) else { completion(nil, .invalidURL); return }
+    let params    = parameters(forQuery: query, media: type, options: options)
+    guard let url = URLWithParameters(params) else { completion(nil, .invalidURL); return }
     
     // print request for debug purposes
     print("Request url: \(url)")
@@ -68,6 +65,20 @@ public final class iTunes {
     }
   }
   
+  private func parameters(forQuery query: String, media: Media? = nil, options: Options? = nil) -> [String : String] {
+    var parameters = [ "term" : query ]
+    
+    if let media = media {
+      parameters.unionInPlace(media.parameters)
+    }
+    
+    if let options = options?.parameters {
+      parameters.unionInPlace(options)
+    }
+    
+    return parameters
+  }
+  
   private func URLWithParameters(_ parameters: [String : String]) -> URL? {
     var components  = URLComponents()
     components.scheme = "https"
@@ -77,4 +88,3 @@ public final class iTunes {
     return components.url
   }
 }
-
