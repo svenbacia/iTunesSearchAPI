@@ -13,14 +13,17 @@ import XCTest
 class CountryTests: XCTestCase {
   
   func testCountryCodes() {
-    XCTAssertEqual(Country.chinese.code, "zh")
-    XCTAssertEqual(Country.dutch.code, "nl")
-    XCTAssertEqual(Country.english.code, "en")
-    XCTAssertEqual(Country.french.code, "fr")
-    XCTAssertEqual(Country.german.code, "de")
-    XCTAssertEqual(Country.italian.code, "it")
-    XCTAssertEqual(Country.japanese.code, "ja")
-    XCTAssertEqual(Country.polish.code, "pl")
+    XCTAssertEqual(Country.china.code, "zh")
+    XCTAssertEqual(Country.netherlands.code, "nl")
+    XCTAssertEqual(Country.unitedStates.code, "us")
+    XCTAssertEqual(Country.france.code, "fr")
+    XCTAssertEqual(Country.germany.code, "de")
+    XCTAssertEqual(Country.italy.code, "it")
+    XCTAssertEqual(Country.japan.code, "ja")
+    XCTAssertEqual(Country.poland.code, "pl")
+    XCTAssertEqual(Country.australia.code, "au")
+    XCTAssertEqual(Country.canada.code, "ca")
+    XCTAssertEqual(Country.unitedKingdom.code, "gb")
   }
     
 }
