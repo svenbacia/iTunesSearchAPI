@@ -32,3 +32,27 @@ public struct Options {
     self.includeExplicitContent = includeExplicitContent
   }
 }
+
+extension Options {
+  var parameters: [String : String]? {
+    var param = [String : String]()
+    
+    if let country = country {
+      param["country"] = country.code
+    }
+    
+    if let limit = limit {
+      param["limit"] = String(limit)
+    }
+    
+    if let language = language {
+      param["lang"] = language.rawValue
+    }
+    
+    if let explicit = includeExplicitContent {
+      param["explicit"] = explicit ? "Yes" : "No"
+    }
+    
+    return param.count > 0 ? param : nil
+  }
+}
