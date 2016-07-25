@@ -8,45 +8,22 @@
 
 import Foundation
 
-public enum Country {
-  case australia
-  case canada
-  case china
-  case france
-  case germany
-  case italy
-  case japan
-  case netherlands
-  case poland
-  case unitedKingdom
-  case unitedStates
+public enum Country: String {
+  case australia     = "au"
+  case canada        = "ca"
+  case china         = "zh"
+  case france        = "fr"
+  case germany       = "de"
+  case italy         = "it"
+  case japan         = "ja"
+  case netherlands   = "nl"
+  case poland        = "pl"
+  case unitedKingdom = "gb"
+  case unitedStates  = "us"
 }
 
 extension Country {
-  var code: String {
-    switch self {
-    case .australia:
-      return "au"
-    case .canada:
-      return "ca"
-    case .china:
-      return "zh"
-    case .netherlands:
-      return "nl"
-    case .unitedKingdom:
-      return "gb"
-    case .france:
-      return "fr"
-    case .germany:
-      return "de"
-    case .italy:
-      return "it"
-    case .japan:
-      return "ja"
-    case .poland:
-      return "pl"
-    case .unitedStates:
-      return "us"
-    }
+  public var code: String {
+    return rawValue
   }
 }
