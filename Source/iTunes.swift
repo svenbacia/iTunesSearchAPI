@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias SearchCompletionHandler = ([String : AnyObject]?, Error?) -> Void
+public typealias SearchCompletionHandler = ([String : AnyObject]?, SearchError?) -> Void
 
 public final class iTunes {
   

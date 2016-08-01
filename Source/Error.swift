@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum Error: ErrorProtocol {
+public enum SearchError: Error {
   case invalidSearchTerm
   case invalidURL
   case serverError(Int)
