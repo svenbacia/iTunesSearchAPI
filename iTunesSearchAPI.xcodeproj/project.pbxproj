@@ -19,16 +19,16 @@
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26B1A7D51CC3846D00A8B8C1 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */; };
 		26B1A7D61CC3846D00A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
-		26B1A7D71CC3846D00A8B8C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* Error.swift */; };
+		26B1A7D71CC3846D00A8B8C1 /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */; };
 		26B1A7D81CC3847200A8B8C1 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */; };
 		26B1A7D91CC3847200A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
-		26B1A7DA1CC3847200A8B8C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* Error.swift */; };
+		26B1A7DA1CC3847200A8B8C1 /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */; };
 		26B1A7DB1CC3847200A8B8C1 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */; };
 		26B1A7DC1CC3847200A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
-		26B1A7DD1CC3847200A8B8C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* Error.swift */; };
+		26B1A7DD1CC3847200A8B8C1 /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */; };
 		26B1A7DE1CC3847300A8B8C1 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */; };
 		26B1A7DF1CC3847300A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
-		26B1A7E01CC3847300A8B8C1 /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* Error.swift */; };
+		26B1A7E01CC3847300A8B8C1 /* SearchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */; };
 		26B1A8171CC3856300A8B8C1 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8161CC3856300A8B8C1 /* Entity.swift */; };
 		26B1A8181CC3856300A8B8C1 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8161CC3856300A8B8C1 /* Entity.swift */; };
 		26B1A8191CC3856300A8B8C1 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8161CC3856300A8B8C1 /* Entity.swift */; };
@@ -57,6 +57,10 @@
 		26B1A83B1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
 		26B1A83C1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
 		26B1A83D1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
+		26FDB90F1D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
+		26FDB9101D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
+		26FDB9111D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
+		26FDB9121D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,7 +95,7 @@
 		26B1A7CD1CC3819900A8B8C1 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-OSX.plist"; path = "Source/Info-OSX.plist"; sourceTree = "<group>"; };
 		26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = iTunes.swift; path = Source/iTunes.swift; sourceTree = "<group>"; };
 		26B1A7D31CC3846D00A8B8C1 /* Media.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Media.swift; path = Source/Media.swift; sourceTree = "<group>"; };
-		26B1A7D41CC3846D00A8B8C1 /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Source/Error.swift; sourceTree = "<group>"; };
+		26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchError.swift; path = Source/SearchError.swift; sourceTree = "<group>"; };
 		26B1A8161CC3856300A8B8C1 /* Entity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Entity.swift; path = Source/Entity.swift; sourceTree = SOURCE_ROOT; };
 		26B1A81B1CC3857700A8B8C1 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Country.swift; path = Source/Country.swift; sourceTree = SOURCE_ROOT; };
 		26B1A81C1CC3857700A8B8C1 /* Language.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Language.swift; path = Source/Language.swift; sourceTree = SOURCE_ROOT; };
@@ -99,6 +103,7 @@
 		26B1A82A1CC3859100A8B8C1 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Merge.swift"; path = "Source/Dictionary+Merge.swift"; sourceTree = SOURCE_ROOT; };
 		26B1A82C1CC3859100A8B8C1 /* String+URLEscaped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+URLEscaped.swift"; path = "Source/String+URLEscaped.swift"; sourceTree = SOURCE_ROOT; };
 		26B1A8391CC3859C00A8B8C1 /* EntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityType.swift; path = Source/EntityType.swift; sourceTree = SOURCE_ROOT; };
+		26FDB90E1D51F5A300D1CA2E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,7 +186,8 @@
 			children = (
 				26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */,
 				26B1A7D31CC3846D00A8B8C1 /* Media.swift */,
-				26B1A7D41CC3846D00A8B8C1 /* Error.swift */,
+				26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */,
+				26FDB90E1D51F5A300D1CA2E /* Result.swift */,
 				26B5961A1CC2A9A900C07FA9 /* Entity */,
 				26B596171CC2A86F00C07FA9 /* Additional Options */,
 				2680807D1C84AC1A009DF04C /* Extension */,
@@ -487,9 +493,10 @@
 				26B1A8351CC3859100A8B8C1 /* String+URLEscaped.swift in Sources */,
 				26B1A8261CC3857700A8B8C1 /* Options.swift in Sources */,
 				26B1A7D61CC3846D00A8B8C1 /* Media.swift in Sources */,
-				26B1A7D71CC3846D00A8B8C1 /* Error.swift in Sources */,
+				26B1A7D71CC3846D00A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8171CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D51CC3846D00A8B8C1 /* iTunes.swift in Sources */,
+				26FDB90F1D51F5A300D1CA2E /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,9 +511,10 @@
 				26B1A8361CC3859100A8B8C1 /* String+URLEscaped.swift in Sources */,
 				26B1A8271CC3857700A8B8C1 /* Options.swift in Sources */,
 				26B1A7D91CC3847200A8B8C1 /* Media.swift in Sources */,
-				26B1A7DA1CC3847200A8B8C1 /* Error.swift in Sources */,
+				26B1A7DA1CC3847200A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8181CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D81CC3847200A8B8C1 /* iTunes.swift in Sources */,
+				26FDB9101D51F5A300D1CA2E /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,9 +529,10 @@
 				26B1A8371CC3859100A8B8C1 /* String+URLEscaped.swift in Sources */,
 				26B1A8281CC3857700A8B8C1 /* Options.swift in Sources */,
 				26B1A7DC1CC3847200A8B8C1 /* Media.swift in Sources */,
-				26B1A7DD1CC3847200A8B8C1 /* Error.swift in Sources */,
+				26B1A7DD1CC3847200A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8191CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7DB1CC3847200A8B8C1 /* iTunes.swift in Sources */,
+				26FDB9111D51F5A300D1CA2E /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,9 +547,10 @@
 				26B1A8381CC3859100A8B8C1 /* String+URLEscaped.swift in Sources */,
 				26B1A8291CC3857700A8B8C1 /* Options.swift in Sources */,
 				26B1A7DF1CC3847300A8B8C1 /* Media.swift in Sources */,
-				26B1A7E01CC3847300A8B8C1 /* Error.swift in Sources */,
+				26B1A7E01CC3847300A8B8C1 /* SearchError.swift in Sources */,
 				26B1A81A1CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7DE1CC3847300A8B8C1 /* iTunes.swift in Sources */,
+				26FDB9121D51F5A300D1CA2E /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +569,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iTunesSearchAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -576,10 +583,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = iTunesSearchAPITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -593,6 +597,7 @@
 		26B1A7A81CC3816200A8B8C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -613,6 +618,7 @@
 		26B1A7A91CC3816200A8B8C1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -646,7 +652,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Debug;
 		};
@@ -667,7 +673,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
 			name = Release;
 		};
