@@ -8,8 +8,6 @@
 
 import Foundation
 
-public typealias SearchCompletionHandler = ([String : AnyObject]?, SearchError?) -> Void
-
 public final class iTunes {
   
   // MARK: - Properties
@@ -24,11 +22,15 @@ public final class iTunes {
   
   // MARK: - Search Function
   
-  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: SearchCompletionHandler) {
+  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
 
     // build parameter dictionary
-    let params    = parameters(forQuery: query, media: type, options: options)
-    guard let url = URLWithParameters(params) else { completion(nil, .invalidURL); return }
+    let params = parameters(forQuery: query, media: type, options: options)
+    
+    guard let url = URLWithParameters(params) else {
+      completion(.failure(.invalidURL))
+      return nil
+    }
     
     // print request for debug purposes
     print("Request url: \(url)")
@@ -38,30 +40,32 @@ public final class iTunes {
     
     // start task
     task.resume()
+    
+    return task
   }
   
   // MARK: - Helper
   
-  private func searchTask(withURL url: URL, completion: SearchCompletionHandler) -> URLSessionDataTask {
+  private func searchTask(withURL url: URL, completion: (Result<AnyObject, SearchError>) -> Void) -> URLSessionDataTask {
     return URLSession.shared.dataTask(with: url) { data, response, error in
       
       guard let httpResponse = response as? HTTPURLResponse else {
-        DispatchQueue.main.async { completion(nil, .serverError(0)) }
+        DispatchQueue.main.async { completion(.failure(.invalidServerResponse)) }
         return
       }
       
       guard 200...299 ~= httpResponse.statusCode else {
-        DispatchQueue.main.async { completion(nil, .serverError(httpResponse.statusCode)) }
+        DispatchQueue.main.async { completion(.failure(.serverError(httpResponse.statusCode))) }
         return
       }
       
       guard let data = data,
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String : AnyObject] else {
-              DispatchQueue.main.async { completion(nil, .invalidJSON) }
-          return
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+              DispatchQueue.main.async { completion(.failure(.invalidJSON)) }
+              return
       }
       
-      DispatchQueue.main.async { completion(json, nil) }
+      DispatchQueue.main.async { completion(.success(json)) }
     }
   }
   
