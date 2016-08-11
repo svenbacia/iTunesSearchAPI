@@ -24,6 +24,10 @@ class CountryTests: XCTestCase {
     XCTAssertEqual(Country.australia.code, "au")
     XCTAssertEqual(Country.canada.code, "ca")
     XCTAssertEqual(Country.unitedKingdom.code, "gb")
+    XCTAssertEqual(Country.denmark.code, "dk")
+    XCTAssertEqual(Country.sweden.code, "se")
+    XCTAssertEqual(Country.spain.code, "es")
+    XCTAssertEqual(Country.switzerland.code, "ch")
   }
     
 }
