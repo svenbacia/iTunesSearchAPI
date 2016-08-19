@@ -22,7 +22,7 @@ public enum Media {
   case eBook(Entity?)
   case all(Entity?)
   
-  private var value: String {
+  fileprivate var value: String {
     switch self {
     case .movie:
       return "movie"
@@ -47,7 +47,7 @@ public enum Media {
     }
   }
   
-  private var entity: Entity? {
+  fileprivate var entity: Entity? {
     switch self {
     case .movie(let entity):
       return entity

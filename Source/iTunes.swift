@@ -22,7 +22,7 @@ public final class iTunes {
   
   // MARK: - Search Function
   
-  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
 
     // build parameter dictionary
     let params = parameters(forQuery: query, media: type, options: options)
@@ -46,7 +46,7 @@ public final class iTunes {
   
   // MARK: - Helper
   
-  private func searchTask(withURL url: URL, completion: (Result<AnyObject, SearchError>) -> Void) -> URLSessionDataTask {
+  private func searchTask(withURL url: URL, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionDataTask {
     return URLSession.shared.dataTask(with: url) { data, response, error in
       
       guard let httpResponse = response as? HTTPURLResponse else {
@@ -60,7 +60,7 @@ public final class iTunes {
       }
       
       guard let data = data,
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject else {
               DispatchQueue.main.async { completion(.failure(.invalidJSON)) }
               return
       }
