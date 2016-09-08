@@ -9,7 +9,7 @@
 import Foundation
 
 extension String {
-  var URLEscaped: String? {
-    return stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())
+  var urlEscaped: String? {
+    return addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
   }
 }
