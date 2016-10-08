@@ -18,9 +18,9 @@ let itunes = iTunes()
 
 // For the most basic search you only have to provide a search term and a completion handler.
 // The result of the search will be passed as a Result containing either the successfully
-// decoded JSON or an Error.
+// decoded JSON or a SearchError.
 itunes.search(for: "Castle") { result in
-  // handle the Result<AnyObject, Error>
+  // handle the Result<AnyObject, SearchError>
 }
 ```
 
@@ -29,7 +29,7 @@ itunes.search(for: "Castle") { result in
 ```Swift
 // When you are looking for something specific you can add a specific media type.
 itunes.search(for: "Castle", ofType: .TVShow(Entity.TVSeason)) { result in
-  // handle the Result<AnyObject, Error>
+  // handle the Result<AnyObject, SearchError>
 }
 ```
 
