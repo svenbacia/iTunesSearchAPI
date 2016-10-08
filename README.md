@@ -13,21 +13,23 @@
 ### Basic Request
 
 ```Swift
-// iTunesSearchAPI has a singleton instance `defaultSearch`
-let search = iTunesSearchAPI.defaultSearch
+// Create an iTunes object
+let itunes = iTunes()
 
-// for the most basic search you only have to provide a search term and a completion handler
-search.searchFor("Castle") { json, error in
-  // handle json and/or error
+// For the most basic search you only have to provide a search term and a completion handler.
+// The result of the search will be passed as a Result containing either the successfully
+// decoded JSON or an Error.
+itunes.search(for: "Castle") { result in
+  // handle the Result<AnyObject, Error>
 }
 ```
 
 ### Specified Media Type
 
 ```Swift
-// When you are looking for something specific you can add a specific media type
-search.searchFor("Castle", ofType: .TVShow(Entity.TVSeason)) { json, error in
-  // handle json and/or error
+// When you are looking for something specific you can add a specific media type.
+itunes.search(for: "Castle", ofType: .TVShow(Entity.TVSeason)) { result in
+  // handle the Result<AnyObject, Error>
 }
 ```
 
@@ -35,7 +37,7 @@ Each `Media` type can take an additional parameter of type `Entity`. This entity
 
 ## Requirements
 
-* Swift 2.2
+* Swift 3.0
 * iOS 8.4
 * watchOS 2
 * tvOS 9.0
@@ -44,7 +46,7 @@ Each `Media` type can take an additional parameter of type `Entity`. This entity
 ## Installation
 
 ### Cocoapods
-AddButton is available through [CocoaPods](cocoapods.org). To install it, simply add the following line to your Podfile:
+iTunesSearchAPI is available through [CocoaPods](cocoapods.org). To install it, simply add the following line to your Podfile:
 
 ```Ruby
 pod "iTunesSearchAPI"
