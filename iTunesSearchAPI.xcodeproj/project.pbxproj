@@ -14,6 +14,10 @@
 		26005D381D4545E4003E1326 /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D371D4545E4003E1326 /* DictionaryTests.swift */; };
 		26005D3A1D4546EE003E1326 /* StringTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26005D391D4546EE003E1326 /* StringTests.swift */; };
 		2605E84B1D45F7820033374E /* LanguageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2605E84A1D45F7820033374E /* LanguageTests.swift */; };
+		262D87411DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
+		262D87421DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
+		262D87431DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
+		262D87441DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
 		26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -57,10 +61,6 @@
 		26B1A83B1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
 		26B1A83C1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
 		26B1A83D1CC3859C00A8B8C1 /* EntityType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A8391CC3859C00A8B8C1 /* EntityType.swift */; };
-		26FDB90F1D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
-		26FDB9101D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
-		26FDB9111D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
-		26FDB9121D51F5A300D1CA2E /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FDB90E1D51F5A300D1CA2E /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +81,7 @@
 		26005D371D4545E4003E1326 /* DictionaryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
 		26005D391D4546EE003E1326 /* StringTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringTests.swift; sourceTree = "<group>"; };
 		2605E84A1D45F7820033374E /* LanguageTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LanguageTests.swift; sourceTree = "<group>"; };
+		262D87401DAD7AB400DE81C9 /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Result.swift; path = Source/Result.swift; sourceTree = "<group>"; };
 		2637BD1A1CC3C86D001915C8 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BD1E1CC3C86D001915C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITests.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		26B1A82A1CC3859100A8B8C1 /* Dictionary+Merge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Dictionary+Merge.swift"; path = "Source/Dictionary+Merge.swift"; sourceTree = SOURCE_ROOT; };
 		26B1A82C1CC3859100A8B8C1 /* String+URLEscaped.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+URLEscaped.swift"; path = "Source/String+URLEscaped.swift"; sourceTree = SOURCE_ROOT; };
 		26B1A8391CC3859C00A8B8C1 /* EntityType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EntityType.swift; path = Source/EntityType.swift; sourceTree = SOURCE_ROOT; };
-		26FDB90E1D51F5A300D1CA2E /* Result.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,7 +187,7 @@
 				26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */,
 				26B1A7D31CC3846D00A8B8C1 /* Media.swift */,
 				26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */,
-				26FDB90E1D51F5A300D1CA2E /* Result.swift */,
+				262D87401DAD7AB400DE81C9 /* Result.swift */,
 				26B5961A1CC2A9A900C07FA9 /* Entity */,
 				26B596171CC2A86F00C07FA9 /* Additional Options */,
 				2680807D1C84AC1A009DF04C /* Extension */,
@@ -496,7 +496,7 @@
 				26B1A7D71CC3846D00A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8171CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D51CC3846D00A8B8C1 /* iTunes.swift in Sources */,
-				26FDB90F1D51F5A300D1CA2E /* Result.swift in Sources */,
+				262D87411DAD7AB400DE81C9 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +514,7 @@
 				26B1A7DA1CC3847200A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8181CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D81CC3847200A8B8C1 /* iTunes.swift in Sources */,
-				26FDB9101D51F5A300D1CA2E /* Result.swift in Sources */,
+				262D87421DAD7AB400DE81C9 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -532,7 +532,7 @@
 				26B1A7DD1CC3847200A8B8C1 /* SearchError.swift in Sources */,
 				26B1A8191CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7DB1CC3847200A8B8C1 /* iTunes.swift in Sources */,
-				26FDB9111D51F5A300D1CA2E /* Result.swift in Sources */,
+				262D87431DAD7AB400DE81C9 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -550,7 +550,7 @@
 				26B1A7E01CC3847300A8B8C1 /* SearchError.swift in Sources */,
 				26B1A81A1CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7DE1CC3847300A8B8C1 /* iTunes.swift in Sources */,
-				26FDB9121D51F5A300D1CA2E /* Result.swift in Sources */,
+				262D87441DAD7AB400DE81C9 /* Result.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
