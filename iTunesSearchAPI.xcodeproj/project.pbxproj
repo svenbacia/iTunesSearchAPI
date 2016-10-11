@@ -18,6 +18,9 @@
 		262D87421DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
 		262D87431DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
 		262D87441DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
+		262D87451DAD7C7D00DE81C9 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		262D87461DAD7C7D00DE81C9 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		262D87471DAD7C7E00DE81C9 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
 		26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -265,6 +268,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262D87451DAD7C7D00DE81C9 /* iTunesSearchAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +276,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262D87461DAD7C7D00DE81C9 /* iTunesSearchAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +284,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				262D87471DAD7C7E00DE81C9 /* iTunesSearchAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,6 +657,7 @@
 				PRODUCT_NAME = iTunesSearchAPI;
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -672,6 +679,7 @@
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 4;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -691,6 +699,7 @@
 				PRODUCT_NAME = iTunesSearchAPI;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -711,6 +720,7 @@
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 9.0;
 			};
@@ -734,6 +744,7 @@
 				PRODUCT_NAME = iTunesSearchAPI;
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -756,6 +767,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
