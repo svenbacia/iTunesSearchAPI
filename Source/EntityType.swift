@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 public protocol EntityType {
   var value: String { get }
   var parameter: [String : String] { get }
