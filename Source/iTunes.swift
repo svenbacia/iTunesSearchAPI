@@ -23,11 +23,33 @@ public final class iTunes {
   // MARK: - Search Function
   
   public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-
+    
     // build parameter dictionary
     let params = parameters(forQuery: query, media: type, options: options)
     
     guard let url = URLWithParameters(params) else {
+      completion(.failure(.invalidURL))
+      return nil
+    }
+    
+    // print request for debug purposes
+    print("Request url: \(url)")
+    
+    // create data task
+    let task = searchTask(withURL: url, completion: completion)
+    
+    // start task
+    task.resume()
+    
+    return task
+  }
+  
+  public func lookup(for id: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    
+    // build parameter dictionary
+    let params = parameters(forID: id)
+    
+    guard let url = URLWithParameters(params, path: "/lookup") else {
       completion(.failure(.invalidURL))
       return nil
     }
@@ -60,9 +82,9 @@ public final class iTunes {
       }
       
       guard let data = data,
-            let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject else {
-              DispatchQueue.main.async { completion(.failure(.invalidJSON)) }
-              return
+        let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject else {
+          DispatchQueue.main.async { completion(.failure(.invalidJSON)) }
+          return
       }
       
       DispatchQueue.main.async { completion(.success(json)) }
@@ -83,11 +105,16 @@ public final class iTunes {
     return parameters
   }
   
-  private func URLWithParameters(_ parameters: [String : String]) -> URL? {
+  private func parameters(forID id: String) -> [String : String] {
+    let parameters = [ "id" : id ]
+    return parameters
+  }
+  
+  private func URLWithParameters(_ parameters: [String : String], path: String = "/search") -> URL? {
     var components  = URLComponents()
     components.scheme = "https"
     components.host   = base
-    components.path   = "/search"
+    components.path   = path
     components.queryItems = parameters.map { URLQueryItem(name: $0.0, value: $0.1) }
     return components.url
   }
