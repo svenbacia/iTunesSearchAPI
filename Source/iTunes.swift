@@ -60,6 +60,7 @@ public final class iTunes {
   }
   
   func lookupWithParams(params: [String : String],  completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+
     guard let url = URLWithParameters(params, path: "/lookup") else {
       completion(.failure(.invalidURL))
       return nil
