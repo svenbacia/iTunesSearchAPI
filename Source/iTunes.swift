@@ -44,11 +44,23 @@ public final class iTunes {
     return task
   }
   
+  public func lookup(media upc: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    let params = parameters(forID: upc, tag: "upc")
+    return self.lookupWithParams(params: params, completion: completion)
+  }
+  
+  public func lookup(book isbn: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    let params = parameters(forID: isbn, tag: "isbn")
+    return self.lookupWithParams(params: params, completion: completion)
+  }
+  
   public func lookup(for id: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-    
-    // build parameter dictionary
-    let params = parameters(forID: id)
-    
+    let params = parameters(forID: id, tag: "id")
+    return self.lookupWithParams(params: params, completion: completion)
+  }
+  
+  func lookupWithParams(params: [String : String],  completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+
     guard let url = URLWithParameters(params, path: "/lookup") else {
       completion(.failure(.invalidURL))
       return nil
@@ -105,8 +117,8 @@ public final class iTunes {
     return parameters
   }
   
-  private func parameters(forID id: String) -> [String : String] {
-    let parameters = [ "id" : id ]
+  private func parameters(forID id: String, tag: String) -> [String : String] {
+    let parameters = [ tag : id ]
     return parameters
   }
   
