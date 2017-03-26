@@ -44,23 +44,22 @@ public final class iTunes {
     return task
   }
   
-  public func lookup(media upc: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-    let params = parameters(forID: upc, tag: "upc")
+  public func lookup(media upc: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    let params = parameters(forID: upc, tag: "upc", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
-  public func lookup(book isbn: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-    let params = parameters(forID: isbn, tag: "isbn")
+  public func lookup(book isbn: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    let params = parameters(forID: isbn, tag: "isbn", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
-  public func lookup(for id: String, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-    let params = parameters(forID: id, tag: "id")
+  public func lookup(for id: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+    let params = parameters(forID: id, tag: "id", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
   func lookupWithParams(params: [String : String],  completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-
     guard let url = URLWithParameters(params, path: "/lookup") else {
       completion(.failure(.invalidURL))
       return nil
@@ -117,8 +116,11 @@ public final class iTunes {
     return parameters
   }
   
-  private func parameters(forID id: String, tag: String) -> [String : String] {
-    let parameters = [ tag : id ]
+  private func parameters(forID id: String, tag: String, options: Options? = nil) -> [String : String] {
+    var parameters = [ tag : id ]
+    if let options = options?.parameters {
+      parameters.unionInPlace(options)
+    }
     return parameters
   }
   
