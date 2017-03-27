@@ -22,12 +22,12 @@ public final class iTunes {
   
   // MARK: - Search Function
   
-  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+  public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionTask? {
     
     // build parameter dictionary
     let params = parameters(forQuery: query, media: type, options: options)
     
-    guard let url = URLWithParameters(params) else {
+    guard let url = url(withParameters: params) else {
       completion(.failure(.invalidURL))
       return nil
     }
@@ -44,23 +44,23 @@ public final class iTunes {
     return task
   }
   
-  public func lookup(media upc: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+  public func lookup(media upc: String, options: Options? = nil, completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionTask? {
     let params = parameters(forID: upc, tag: "upc", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
-  public func lookup(book isbn: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+  public func lookup(book isbn: String, options: Options? = nil, completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionTask? {
     let params = parameters(forID: isbn, tag: "isbn", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
-  public func lookup(for id: String, options: Options? = nil, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
+  public func lookup(for id: String, options: Options? = nil, completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionTask? {
     let params = parameters(forID: id, tag: "id", options: options)
     return self.lookupWithParams(params: params, completion: completion)
   }
   
-  func lookupWithParams(params: [String : String],  completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionTask? {
-    guard let url = URLWithParameters(params, path: "/lookup") else {
+  func lookupWithParams(params: [String: String],  completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionTask? {
+    guard let url = url(withParameters: params, path: "/lookup") else {
       completion(.failure(.invalidURL))
       return nil
     }
@@ -79,7 +79,7 @@ public final class iTunes {
   
   // MARK: - Helper
   
-  private func searchTask(withURL url: URL, completion: @escaping (Result<AnyObject, SearchError>) -> Void) -> URLSessionDataTask {
+  private func searchTask(withURL url: URL, completion: @escaping (Result<Any, SearchError>) -> Void) -> URLSessionDataTask {
     return URLSession.shared.dataTask(with: url) { data, response, error in
       
       guard let httpResponse = response as? HTTPURLResponse else {
@@ -102,7 +102,7 @@ public final class iTunes {
     }
   }
   
-  private func parameters(forQuery query: String, media: Media? = nil, options: Options? = nil) -> [String : String] {
+  private func parameters(forQuery query: String, media: Media? = nil, options: Options? = nil) -> [String: String] {
     var parameters = [ "term" : query ]
     
     if let media = media {
@@ -116,7 +116,7 @@ public final class iTunes {
     return parameters
   }
   
-  private func parameters(forID id: String, tag: String, options: Options? = nil) -> [String : String] {
+  private func parameters(forID id: String, tag: String, options: Options? = nil) -> [String: String] {
     var parameters = [ tag : id ]
     if let options = options?.parameters {
       parameters.unionInPlace(options)
@@ -124,11 +124,11 @@ public final class iTunes {
     return parameters
   }
   
-  private func URLWithParameters(_ parameters: [String : String], path: String = "/search") -> URL? {
-    var components  = URLComponents()
+  private func url(withParameters parameters: [String: String], path: String = "/search") -> URL? {
+    var components = URLComponents()
     components.scheme = "https"
-    components.host   = base
-    components.path   = path
+    components.host = base
+    components.path = path
     components.queryItems = parameters.map { URLQueryItem(name: $0.0, value: $0.1) }
     return components.url
   }
