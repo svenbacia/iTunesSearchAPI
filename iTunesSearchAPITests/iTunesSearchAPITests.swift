@@ -11,5 +11,15 @@ import XCTest
 @testable import iTunesSearchAPI
 
 class iTunesSearchAPITests: XCTestCase {
+  
+  func testInit_DebugFalse() {
+    let tunes = iTunes()
+    XCTAssertFalse(tunes.isDebug)
+  }
+  
+  func testInit_DebugTrue() {
+    let tunes = iTunes(debug: true)
+    XCTAssertTrue(tunes.isDebug)
+  }
 
 }
