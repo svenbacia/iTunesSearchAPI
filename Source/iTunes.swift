@@ -12,12 +12,14 @@ public final class iTunes {
   
   // MARK: - Properties
   
+  public var isDebug = false
+  
   private let base = "itunes.apple.com"
   
   // MARK: - Init
   
-  public init() {
-    
+  public init(debug: Bool = false) {
+    self.isDebug = debug
   }
   
   // MARK: - Search Function
@@ -33,7 +35,9 @@ public final class iTunes {
     }
     
     // print request for debug purposes
-    print("Request url: \(url)")
+    if isDebug {
+      print("Request url: \(url)")
+    }
     
     // create data task
     let task = searchTask(withURL: url, completion: completion)
@@ -66,7 +70,9 @@ public final class iTunes {
     }
     
     // print request for debug purposes
-    print("Request url: \(url)")
+    if isDebug {
+      print("Request url: \(url)")
+    }
     
     // create data task
     let task = searchTask(withURL: url, completion: completion)
