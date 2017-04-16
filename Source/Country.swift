@@ -103,7 +103,7 @@ public enum Country: String {
     case philippines        = "ph"
     case poland             = "pl"
     case portugal           = "pt"
-    case qatar              = "aq"
+    case qatar              = "qa"
     case romania            = "ro"
     case russia             = "ru"
     case saudiArabia        = "sa"
