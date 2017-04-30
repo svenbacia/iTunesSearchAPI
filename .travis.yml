@@ -8,7 +8,7 @@ before_install:
   - gem install scan
 
 script:
-  - scan
+  - fastlane scan
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
