@@ -9,9 +9,10 @@
 import Foundation
 
 public enum SearchError: Error {
-  case invalidSearchTerm
-  case invalidURL
-  case invalidServerResponse
-  case serverError(Int)
-  case invalidJSON
+    case unknown
+    case invalidSearchTerm
+    case invalidURL
+    case invalidServerResponse
+    case serverError(Int)
+    case invalidJSON
 }

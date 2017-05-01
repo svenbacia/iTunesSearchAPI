@@ -19,6 +19,12 @@
 		262D87431DAD7AB400DE81C9 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 262D87401DAD7AB400DE81C9 /* Result.swift */; };
 		2637BD1F1CC3C86D001915C8 /* iTunesSearchAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */; };
 		26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */; };
+		2676D2171EB76EA5002CEA2C /* FakeURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D2161EB76EA5002CEA2C /* FakeURLSession.swift */; };
+		2676D2191EB77A23002CEA2C /* LookupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D2181EB77A23002CEA2C /* LookupType.swift */; };
+		2676D21A1EB77A23002CEA2C /* LookupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D2181EB77A23002CEA2C /* LookupType.swift */; };
+		2676D21B1EB77A23002CEA2C /* LookupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D2181EB77A23002CEA2C /* LookupType.swift */; };
+		2676D21C1EB77A23002CEA2C /* LookupType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D2181EB77A23002CEA2C /* LookupType.swift */; };
+		2676D21E1EB77CC7002CEA2C /* LookupTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2676D21D1EB77CC7002CEA2C /* LookupTypeTests.swift */; };
 		26B1A7A51CC3816200A8B8C1 /* iTunesSearchAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26B1A7D51CC3846D00A8B8C1 /* iTunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D21CC3846D00A8B8C1 /* iTunes.swift */; };
 		26B1A7D61CC3846D00A8B8C1 /* Media.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26B1A7D31CC3846D00A8B8C1 /* Media.swift */; };
@@ -89,6 +95,9 @@
 		2637BD1A1CC3C86D001915C8 /* iTunesSearchAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iTunesSearchAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2637BD1E1CC3C86D001915C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		26722CC61D45349800CD84AD /* iTunesSearchAPITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesSearchAPITests.swift; sourceTree = "<group>"; };
+		2676D2161EB76EA5002CEA2C /* FakeURLSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeURLSession.swift; sourceTree = "<group>"; };
+		2676D2181EB77A23002CEA2C /* LookupType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LookupType.swift; path = Source/LookupType.swift; sourceTree = "<group>"; };
+		2676D21D1EB77CC7002CEA2C /* LookupTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LookupTypeTests.swift; sourceTree = "<group>"; };
 		26B1A7A21CC3816100A8B8C1 /* iTunesSearchAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iTunesSearchAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		26B1A7A41CC3816200A8B8C1 /* iTunesSearchAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = iTunesSearchAPI.h; path = Source/iTunesSearchAPI.h; sourceTree = "<group>"; };
 		26B1A7A61CC3816200A8B8C1 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Info-iOS.plist"; path = "Source/Info-iOS.plist"; sourceTree = "<group>"; };
@@ -164,8 +173,18 @@
 				26005D371D4545E4003E1326 /* DictionaryTests.swift */,
 				26005D391D4546EE003E1326 /* StringTests.swift */,
 				26D3B2341E899B0D007D9E7A /* ResultTests.swift */,
+				2676D21D1EB77CC7002CEA2C /* LookupTypeTests.swift */,
+				2676D2151EB76E9A002CEA2C /* Helper */,
 			);
 			path = iTunesSearchAPITests;
+			sourceTree = "<group>";
+		};
+		2676D2151EB76E9A002CEA2C /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				2676D2161EB76EA5002CEA2C /* FakeURLSession.swift */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		2680807A1C84ABC7009DF04C /* Protocol */ = {
@@ -194,6 +213,7 @@
 				26B1A7D31CC3846D00A8B8C1 /* Media.swift */,
 				26B1A7D41CC3846D00A8B8C1 /* SearchError.swift */,
 				262D87401DAD7AB400DE81C9 /* Result.swift */,
+				2676D2181EB77A23002CEA2C /* LookupType.swift */,
 				26B5961A1CC2A9A900C07FA9 /* Entity */,
 				26B596171CC2A86F00C07FA9 /* Additional Options */,
 				2680807D1C84AC1A009DF04C /* Extension */,
@@ -487,6 +507,8 @@
 				26005D341D453CAC003E1326 /* MediaTests.swift in Sources */,
 				26D3B2351E899B0D007D9E7A /* ResultTests.swift in Sources */,
 				26005D3A1D4546EE003E1326 /* StringTests.swift in Sources */,
+				2676D21E1EB77CC7002CEA2C /* LookupTypeTests.swift in Sources */,
+				2676D2171EB76EA5002CEA2C /* FakeURLSession.swift in Sources */,
 				26722CC71D45349800CD84AD /* iTunesSearchAPITests.swift in Sources */,
 				2605E84B1D45F7820033374E /* LanguageTests.swift in Sources */,
 				26005D361D453D9E003E1326 /* OptionsTests.swift in Sources */,
@@ -509,6 +531,7 @@
 				26B1A8171CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D51CC3846D00A8B8C1 /* iTunes.swift in Sources */,
 				262D87411DAD7AB400DE81C9 /* Result.swift in Sources */,
+				2676D2191EB77A23002CEA2C /* LookupType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +550,7 @@
 				26B1A8181CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7D81CC3847200A8B8C1 /* iTunes.swift in Sources */,
 				262D87421DAD7AB400DE81C9 /* Result.swift in Sources */,
+				2676D21A1EB77A23002CEA2C /* LookupType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +569,7 @@
 				26B1A8191CC3856300A8B8C1 /* Entity.swift in Sources */,
 				26B1A7DB1CC3847200A8B8C1 /* iTunes.swift in Sources */,
 				262D87431DAD7AB400DE81C9 /* Result.swift in Sources */,
+				2676D21B1EB77A23002CEA2C /* LookupType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,6 +588,7 @@
 				26F6689A1DAD83FE005C203A /* Country.swift in Sources */,
 				26F6689E1DAD83FE005C203A /* String+URLEscaped.swift in Sources */,
 				26F668971DAD83F3005C203A /* SearchError.swift in Sources */,
+				2676D21C1EB77A23002CEA2C /* LookupType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
