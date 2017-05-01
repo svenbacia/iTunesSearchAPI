@@ -8,12 +8,14 @@
 
 import Foundation
 
+/// Each network request returns a Result which contains either a decoded json or an `SearchError`.
 public typealias NetworkResponse = Result<Any, SearchError>
 
 public final class iTunes {
     
     // MARK: - Properties
     
+    /// Indicates whether debug mode is enabled or not.
     public var isDebug = false
     
     private let base = "itunes.apple.com"
@@ -21,6 +23,12 @@ public final class iTunes {
     
     // MARK: - Init
     
+    
+    /// Creates an iTunes Search API client with a specific `URLSession`.
+    ///
+    /// - Parameters:
+    ///   - session: A session which is used for downloading content. The default value is `URLSession.shared`.
+    ///   - debug: Indicates if debug mode is enabled or not. In debug mode there will be an additional console output about the requested urls.
     public init(session: URLSession = URLSession.shared, debug: Bool = false) {
         self.session = session
         self.isDebug = debug
@@ -28,6 +36,15 @@ public final class iTunes {
     
     // MARK: - Search Function
     
+    
+    /// Creates a search request for a specific `query`.
+    ///
+    /// - Parameters:
+    ///   - query: The search query.
+    ///   - type: The media type of the search. The default value is `.all`.
+    ///   - options: Additional options like language, country or limit.
+    ///   - completion: The completion handler which return the result of the API request.
+    /// - Returns: The new session data task.
     public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (NetworkResponse) -> Void) -> URLSessionTask? {
         
         // build parameter dictionary
@@ -54,6 +71,14 @@ public final class iTunes {
     
     // MARK: - Lookup
     
+    
+    /// Creates a lookup request for a specific `LookupType`.
+    ///
+    /// - Parameters:
+    ///   - type: The lookup type for example `id` or `isbn`.
+    ///   - options: Additional options like language, country or limit.
+    ///   - completion: The completion handler which return the result of the API request.
+    /// - Returns: The new session data task.
     public func lookup(by type: LookupType, options: Options? = nil, completion: @escaping (NetworkResponse) -> Void) -> URLSessionTask? {
         let params = parameters(forLookup: type, options: options)
         
@@ -77,22 +102,31 @@ public final class iTunes {
         return session.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                DispatchQueue.main.async { completion(.failure(.invalidServerResponse)) }
+                DispatchQueue.main.async {
+                    completion(.failure(.invalidServerResponse))
+                }
                 return
             }
             
+            // check for successful status code
             guard 200...299 ~= httpResponse.statusCode else {
-                DispatchQueue.main.async { completion(.failure(.serverError(httpResponse.statusCode))) }
+                DispatchQueue.main.async {
+                    completion(.failure(.serverError(httpResponse.statusCode)))
+                }
                 return
             }
             
-            guard let data = data,
-                let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) as AnyObject else {
-                    DispatchQueue.main.async { completion(.failure(.invalidJSON)) }
-                    return
+            // try to decode the response json
+            guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
+                DispatchQueue.main.async {
+                    completion(.failure(.invalidJSON))
+                }
+                return
             }
             
-            DispatchQueue.main.async { completion(.success(json)) }
+            DispatchQueue.main.async {
+                completion(.success(json))
+            }
         }
     }
     
