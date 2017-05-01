@@ -63,4 +63,25 @@ extension FakeURLSession {
             return Result.success((data, response))
         }
     }
+    
+    static var serverIssue: FakeURLSession {
+        return FakeURLSession { url in
+            let response = HTTPURLResponse(url: url, statusCode: 500, httpVersion: nil, headerFields: nil)
+            return Result.success((nil, response))
+        }
+    }
+    
+    static var invalidResponse: FakeURLSession {
+        return FakeURLSession { url in
+            return Result.failure(.unknown)
+        }
+    }
+    
+    static var invalidJSON: FakeURLSession {
+        return FakeURLSession { url in
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+            let data = Data(base64Encoded: "Invalid")
+            return Result.success((data, response))
+        }
+    }
 }

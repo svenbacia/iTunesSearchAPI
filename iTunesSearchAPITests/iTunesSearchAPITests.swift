@@ -32,6 +32,16 @@ class iTunesSearchAPITests: XCTestCase {
         XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
     }
     
+    func testSearchWithOptions() {
+        let session = FakeURLSession.empty
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.search(for: "Suits", options: Options(country: .germany), completion: { _ in })
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?country=de&term=Suits&media=all")
+    }
+    
     func testBasicLookupByID() {
         let session = FakeURLSession.empty
         
@@ -40,5 +50,45 @@ class iTunesSearchAPITests: XCTestCase {
         task?.resume()
         
         XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/lookup?id=909253")
+    }
+    
+    func testBasicLookupByIdWithOptions() {
+        let session = FakeURLSession.empty
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.lookup(by: .id("909253"), options: Options(country: .germany)) { _ in }
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/lookup?id=909253&country=de")
+    }
+    
+    func testSearch_withServerIssue() {
+        let session = FakeURLSession.serverIssue
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.search(for: "Suits") { _ in }
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
+    }
+    
+    func testSearch_withUnknownResponse() {
+        let session = FakeURLSession.invalidResponse
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.search(for: "Suits") { _ in }
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
+    }
+    
+    func testSearch_withInvalidJSON() {
+        let session = FakeURLSession.invalidJSON
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.search(for: "Suits") { _ in }
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
     }
 }
