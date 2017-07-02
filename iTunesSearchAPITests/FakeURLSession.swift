@@ -15,9 +15,9 @@ final class FakeURLSession: URLSession {
     
     private final class Task: URLSessionDataTask {
         
-        private let completion: (Void) -> Void
+        private let completion: () -> Void
         
-        init(completion: @escaping (Void) -> Void) {
+        init(completion: @escaping () -> Void) {
             self.completion = completion
             super.init()
         }
