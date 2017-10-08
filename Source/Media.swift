@@ -24,25 +24,25 @@ public enum Media {
   
   fileprivate var value: String {
     switch self {
-    case .movie:
+    case .movie(_):
       return "movie"
-    case .podcast:
+    case .podcast(_):
       return "podcast"
-    case .music:
+    case .music(_):
       return "music"
-    case .musicVideo:
+    case .musicVideo(_):
       return "musicvideo"
-    case .audioBook:
+    case .audioBook(_):
       return "audiobook"
-    case .shortFilm:
+    case .shortFilm(_):
       return "shortFilm"
-    case .tvShow:
+    case .tvShow(_):
       return "tvShow"
-    case .software:
+    case .software(_):
       return "software"
-    case .eBook:
+    case .eBook(_):
       return "ebook"
-    case .all:
+    case .all(_):
       return "all"
     }
   }
