@@ -80,7 +80,7 @@ extension FakeURLSession {
     static var invalidJSON: FakeURLSession {
         return FakeURLSession { url in
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
-            let data = Data(base64Encoded: "Invalid")
+            let data = Data(capacity: 8)
             return iTunes.Result.success((data, response))
         }
     }

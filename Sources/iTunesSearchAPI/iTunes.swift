@@ -11,7 +11,8 @@ import Foundation
 public final class iTunes {
     
     /// Each network request returns a Result which contains either a decoded json or an `iTunes.Error`.
-    public typealias ResponseHandler = (iTunes.Result<Any, iTunes.Error>) -> Void
+    public typealias NetworkResult = iTunes.Result<Any, iTunes.Error>
+    public typealias ResponseHandler = (NetworkResult) -> Void
     
     // MARK: - Properties
     
@@ -99,34 +100,38 @@ public final class iTunes {
     // MARK: - Helper
     
     private func buildTask(withURL url: URL, completion: @escaping ResponseHandler) -> URLSessionDataTask {
-        return session.dataTask(with: url) { data, response, error in
+        return session.dataTask(with: url) { [weak self] data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse else {
-                DispatchQueue.main.async {
-                    completion(.failure(.invalidServerResponse))
-                }
+                self?.complete(with: .failure(.invalidServerResponse), completionHandler: completion)
                 return
             }
             
             // check for successful status code
             guard 200...299 ~= httpResponse.statusCode else {
-                DispatchQueue.main.async {
-                    completion(.failure(.serverError(httpResponse.statusCode)))
-                }
+                self?.complete(with: .failure(.serverError(httpResponse.statusCode)), completionHandler: completion)
+                return
+            }
+            
+            // check for valid data
+            guard let data = data else {
+                self?.complete(with: .failure(.missingData), completionHandler: completion)
                 return
             }
             
             // try to decode the response json
-            guard let data = data, let json = try? JSONSerialization.jsonObject(with: data, options: .allowFragments) else {
-                DispatchQueue.main.async {
-                    completion(.failure(.invalidJSON))
-                }
-                return
+            do {
+                let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
+                self?.complete(with: .success(json), completionHandler: completion)
+            } catch {
+                self?.complete(with: .failure(.invalidJSON(error)), completionHandler: completion)
             }
-            
-            DispatchQueue.main.async {
-                completion(.success(json))
-            }
+        }
+    }
+    
+    private func complete(with result: NetworkResult, completionHandler: @escaping ResponseHandler) {
+        DispatchQueue.main.async {
+            completionHandler(result)
         }
     }
     
