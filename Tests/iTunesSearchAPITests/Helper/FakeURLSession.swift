@@ -29,13 +29,13 @@ final class FakeURLSession: URLSession {
     
     // MARK: - Properties
     
-    private let handler: (URL) -> (Result<(Data?, URLResponse?), SearchError>)
+    private let handler: (URL) -> (iTunes.Result<(Data?, URLResponse?), iTunes.Error>)
     
     var completedURLs = [URL]()
     
     // MARK: - Init
     
-    init(handler: @escaping (URL) -> (Result<(Data?, URLResponse?), SearchError>)) {
+    init(handler: @escaping (URL) -> (iTunes.Result<(Data?, URLResponse?), iTunes.Error>)) {
         self.handler = handler
     }
     
@@ -60,20 +60,20 @@ extension FakeURLSession {
         return FakeURLSession { url in
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
             let data = try? JSONSerialization.data(withJSONObject: [:])
-            return Result.success((data, response))
+            return iTunes.Result.success((data, response))
         }
     }
     
     static var serverIssue: FakeURLSession {
         return FakeURLSession { url in
             let response = HTTPURLResponse(url: url, statusCode: 500, httpVersion: nil, headerFields: nil)
-            return Result.success((nil, response))
+            return iTunes.Result.success((nil, response))
         }
     }
     
     static var invalidResponse: FakeURLSession {
         return FakeURLSession { url in
-            return Result.failure(.unknown)
+            return iTunes.Result.failure(.unknown)
         }
     }
     
@@ -81,7 +81,7 @@ extension FakeURLSession {
         return FakeURLSession { url in
             let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
             let data = Data(base64Encoded: "Invalid")
-            return Result.success((data, response))
+            return iTunes.Result.success((data, response))
         }
     }
 }

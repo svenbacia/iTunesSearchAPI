@@ -8,10 +8,10 @@
 
 import Foundation
 
-/// Each network request returns a Result which contains either a decoded json or an `SearchError`.
-public typealias NetworkResponse = Result<Any, SearchError>
-
 public final class iTunes {
+    
+    /// Each network request returns a Result which contains either a decoded json or an `iTunes.Error`.
+    public typealias ResponseHandler = (iTunes.Result<Any, iTunes.Error>) -> Void
     
     // MARK: - Properties
     
@@ -45,7 +45,7 @@ public final class iTunes {
     ///   - options: Additional options like language, country or limit.
     ///   - completion: The completion handler which return the result of the API request.
     /// - Returns: The new session data task.
-    public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping (NetworkResponse) -> Void) -> URLSessionTask? {
+    public func search(for query: String, ofType type: Media = .all(nil), options: Options? = nil, completion: @escaping ResponseHandler) -> URLSessionTask? {
         
         // build parameter dictionary
         let params = parameters(forQuery: query, media: type, options: options)
@@ -79,7 +79,7 @@ public final class iTunes {
     ///   - options: Additional options like language, country or limit.
     ///   - completion: The completion handler which return the result of the API request.
     /// - Returns: The new session data task.
-    public func lookup(by type: LookupType, options: Options? = nil, completion: @escaping (NetworkResponse) -> Void) -> URLSessionTask? {
+    public func lookup(by type: LookupType, options: Options? = nil, completion: @escaping ResponseHandler) -> URLSessionTask? {
         let params = parameters(forLookup: type, options: options)
         
         guard let url = url(withPath: "/lookup", parameters: params) else {
@@ -98,7 +98,7 @@ public final class iTunes {
     
     // MARK: - Helper
     
-    private func buildTask(withURL url: URL, completion: @escaping (NetworkResponse) -> Void) -> URLSessionDataTask {
+    private func buildTask(withURL url: URL, completion: @escaping ResponseHandler) -> URLSessionDataTask {
         return session.dataTask(with: url) { data, response, error in
             
             guard let httpResponse = response as? HTTPURLResponse else {
