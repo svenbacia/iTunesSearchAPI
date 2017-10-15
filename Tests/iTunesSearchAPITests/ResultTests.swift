@@ -7,19 +7,18 @@
 //
 
 import XCTest
-
-@testable import iTunesSearchAPI
+import iTunesSearchAPI
 
 class ResultTests: XCTestCase {
   
   func testSuccess() {
-    let result = Result<Int, Int>.success(1)
+    let result = iTunes.Result<Int, Int>.success(1)
     XCTAssertEqual(result.value, 1)
     XCTAssertNil(result.error)
   }
   
   func testFailure() {
-    let result = Result<Int, Int>.failure(0)
+    let result = iTunes.Result<Int, Int>.failure(0)
     XCTAssertNil(result.value)
     XCTAssertEqual(result.error, 0)
   }

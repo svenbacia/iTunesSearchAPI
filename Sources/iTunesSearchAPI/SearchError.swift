@@ -8,11 +8,13 @@
 
 import Foundation
 
-public enum SearchError: Error {
-    case unknown
-    case invalidSearchTerm
-    case invalidURL
-    case invalidServerResponse
-    case serverError(Int)
-    case invalidJSON
+public extension iTunes {
+    public enum Error: Swift.Error {
+        case unknown
+        case invalidSearchTerm
+        case invalidURL
+        case invalidServerResponse
+        case serverError(Int)
+        case invalidJSON
+    }
 }
