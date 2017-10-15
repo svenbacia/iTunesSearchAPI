@@ -22,4 +22,3 @@ class LookupTypeTests: XCTestCase {
         XCTAssertEqual(id.parameters, ["id": "909253"])
     }
 }
-

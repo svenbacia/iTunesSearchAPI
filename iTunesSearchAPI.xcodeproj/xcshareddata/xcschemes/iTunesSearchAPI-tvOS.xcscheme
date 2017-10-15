@@ -27,9 +27,29 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       language = ""
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES"
+      codeCoverageEnabled = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "260CBEDA1F93EF7500E4D15F"
+               BuildableName = "iTunesSearchAPITests tvOS.xctest"
+               BlueprintName = "iTunesSearchAPITests tvOS"
+               ReferencedContainer = "container:iTunesSearchAPI.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "26B1A7BB1CC3818500A8B8C1"
+            BuildableName = "iTunesSearchAPI.framework"
+            BlueprintName = "iTunesSearchAPI tvOS"
+            ReferencedContainer = "container:iTunesSearchAPI.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
