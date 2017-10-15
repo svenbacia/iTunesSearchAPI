@@ -15,6 +15,7 @@ public extension iTunes {
         case invalidURL
         case invalidServerResponse
         case serverError(Int)
-        case invalidJSON
+        case missingData
+        case invalidJSON(Swift.Error)
     }
 }

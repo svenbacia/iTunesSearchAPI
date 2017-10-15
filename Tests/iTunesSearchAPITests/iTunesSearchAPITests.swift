@@ -7,7 +7,6 @@
 //
 
 import XCTest
-
 @testable import iTunesSearchAPI
 
 class iTunesSearchAPITests: XCTestCase {
@@ -84,6 +83,19 @@ class iTunesSearchAPITests: XCTestCase {
     
     func testSearch_withInvalidJSON() {
         let session = FakeURLSession.invalidJSON
+        
+        let client = iTunes(session: session, debug: true)
+        let task = client.search(for: "Suits") { _ in }
+        task?.resume()
+        
+        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
+    }
+    
+    func testSearch_withMissingData() {
+        let session = FakeURLSession { (url) -> (iTunes.Result<(Data?, URLResponse?), iTunes.Error>) in
+            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
+            return (iTunes.Result.success((nil, response)))
+        }
         
         let client = iTunes(session: session, debug: true)
         let task = client.search(for: "Suits") { _ in }
