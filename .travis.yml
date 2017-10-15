@@ -5,10 +5,10 @@ osx_image: xcode9
 
 before_install:
   - gem install xcpretty
-  - gem install scan
+  - gem install fastlane
 
 script:
-  - fastlane scan
+  - fastlane test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
