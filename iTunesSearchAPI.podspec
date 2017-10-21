@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
    s.name    = 'iTunesSearchAPI'
-   s.version = '0.4.1'
+   s.version = '1.0'
    s.license = 'MIT'
 
    s.summary          = 'Simple iTunes Search API wrapper'
