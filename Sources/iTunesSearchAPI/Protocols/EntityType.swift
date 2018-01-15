@@ -10,11 +10,11 @@ import Foundation
 
 public protocol EntityType {
   var value: String { get }
-  var parameter: [String : String] { get }
+  var parameter: [String: String] { get }
 }
 
 public extension EntityType {
-  var parameter: [String : String] {
-    return ["entity" : value]
+  var parameter: [String: String] {
+    return ["entity": value]
   }
 }

@@ -12,7 +12,7 @@ public enum LookupType {
     case upc(String)
     case isbn(String)
     case id(String)
-    
+
     var parameters: [String: String] {
         switch self {
         case .upc(let upc):

@@ -9,13 +9,13 @@
 import Foundation
 
 extension Dictionary {
-  mutating func unionInPlace(_ dictionary: Dictionary<Key, Value>) {
+    mutating func unionInPlace(_ dictionary: [Key: Value]) {
     for (key, value) in dictionary {
       self[key] = value
     }
   }
-  
-  func union(_ dictionary: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
+
+  func union(_ dictionary: [Key: Value]) -> [Key: Value] {
     var dict = self
     dict.unionInPlace(dictionary)
     return dict

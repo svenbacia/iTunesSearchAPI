@@ -22,33 +22,33 @@ public enum Entity {
   case audiobook
   case tvSeason
   case allTrack
-  
+
   // Movie
   case movieArtist
-  
+
   // Podcast
   case podcastAuthor
-  
+
   // Music
   case musicArtist
   case musicTrack
   case musicSong
-  
+
   // Audiobook
   case audiobookAuthor
-  
+
   // Shortfilm
   case shortFilmArtist
   case shortFilm
-  
+
   // TVShow
   case tvEpisode
-  
+
   // Software
   case software
   case iPadSoftware
   case macSoftware
-  
+
   // eBook
   case eBook
 }
