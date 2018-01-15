@@ -12,20 +12,20 @@ import XCTest
 
 class DictionaryTests: XCTestCase {
   func testUnionInPlace() {
-    
-    var dictionary = [ "media" : "movie" ]
-    dictionary.unionInPlace([ "entity" : "movie" ])
-    
-    XCTAssertEqual(dictionary, [ "media" : "movie", "entity" : "movie" ])
+
+    var dictionary = [ "media": "movie" ]
+    dictionary.unionInPlace([ "entity": "movie" ])
+
+    XCTAssertEqual(dictionary, [ "media": "movie", "entity": "movie" ])
   }
-  
+
   func testUnion() {
-    
-    let media  = [ "media" : "movie" ]
-    let entity = [ "entity" : "movie" ]
-    
+
+    let media  = [ "media": "movie" ]
+    let entity = [ "entity": "movie" ]
+
     let dictionary = media.union(entity)
-    
-    XCTAssertEqual(dictionary, [ "media" : "movie", "entity" : "movie" ])
+
+    XCTAssertEqual(dictionary, [ "media": "movie", "entity": "movie" ])
   }
 }

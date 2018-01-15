@@ -17,5 +17,5 @@ class StringTests: XCTestCase {
     XCTAssertNotNil(escaped)
     XCTAssertEqual(escaped!, "Person%20of%20Interest")
   }
-  
+
 }

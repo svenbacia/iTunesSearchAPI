@@ -11,10 +11,10 @@ import XCTest
 @testable import iTunesSearchAPI
 
 class LanguageTests: XCTestCase {
-  
+
   func testLanguageCodes() {
     XCTAssertEqual(Language.english.rawValue, "en_us")
     XCTAssertEqual(Language.japanese.rawValue, "ja_jp")
   }
-  
+
 }
