@@ -53,9 +53,7 @@ Both `search()` and `lookup()` can take an addtitional parameter of type `Option
 
 * Swift 4.0
 * iOS 8.4
-* watchOS 2
 * tvOS 9.0
-* OSX 10.10
 
 ## Installation
 
