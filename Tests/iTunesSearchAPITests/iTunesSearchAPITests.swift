@@ -29,7 +29,13 @@ class iTunesSearchAPITests: XCTestCase {
         let task = client.search(for: "Suits") { _ in }
         task?.resume()
 
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
+		XCTAssertTrue(session.completedURLs.first!.absoluteString.starts(with: "https://itunes.apple.com/search?"))
+
+		let components = URLComponents(url: session.completedURLs[0], resolvingAgainstBaseURL: false)!
+		let queryItems = components.queryItems!
+		XCTAssertEqual(2, queryItems.count)
+		XCTAssertEqual(queryItems.first(where: { $0.name == "term" })!.value!, "Suits")
+		XCTAssertEqual(queryItems.first(where: { $0.name == "media" })!.value!, "all")
     }
 
     func testSearchWithOptions() {
@@ -39,7 +45,14 @@ class iTunesSearchAPITests: XCTestCase {
         let task = client.search(for: "Suits", options: Options(country: .germany), completion: { _ in })
         task?.resume()
 
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?country=de&term=Suits&media=all")
+		XCTAssertTrue(session.completedURLs.first!.absoluteString.starts(with: "https://itunes.apple.com/search?"))
+
+		let components = URLComponents(url: session.completedURLs[0], resolvingAgainstBaseURL: false)!
+		let queryItems = components.queryItems!
+		XCTAssertEqual(3, queryItems.count)
+		XCTAssertEqual(queryItems.first(where: { $0.name == "term" })!.value!, "Suits")
+		XCTAssertEqual(queryItems.first(where: { $0.name == "media" })!.value!, "all")
+		XCTAssertEqual(queryItems.first(where: { $0.name == "country" })!.value!, "de")
     }
 
     func testBasicLookupByID() {
@@ -59,49 +72,12 @@ class iTunesSearchAPITests: XCTestCase {
         let task = client.lookup(by: .id("909253"), options: Options(country: .germany)) { _ in }
         task?.resume()
 
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/lookup?id=909253&country=de")
-    }
+		XCTAssertTrue(session.completedURLs.first!.absoluteString.starts(with: "https://itunes.apple.com/lookup?"))
 
-    func testSearch_withServerIssue() {
-        let session = FakeURLSession.serverIssue
-
-        let client = iTunes(session: session, debug: true)
-        let task = client.search(for: "Suits") { _ in }
-        task?.resume()
-
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
-    }
-
-    func testSearch_withUnknownResponse() {
-        let session = FakeURLSession.invalidResponse
-
-        let client = iTunes(session: session, debug: true)
-        let task = client.search(for: "Suits") { _ in }
-        task?.resume()
-
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
-    }
-
-    func testSearch_withInvalidJSON() {
-        let session = FakeURLSession.invalidJSON
-
-        let client = iTunes(session: session, debug: true)
-        let task = client.search(for: "Suits") { _ in }
-        task?.resume()
-
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
-    }
-
-    func testSearch_withMissingData() {
-        let session = FakeURLSession { (url) -> (iTunes.Result<(Data?, URLResponse?), iTunes.Error>) in
-            let response = HTTPURLResponse(url: url, statusCode: 200, httpVersion: nil, headerFields: nil)
-            return (iTunes.Result.success((nil, response)))
-        }
-
-        let client = iTunes(session: session, debug: true)
-        let task = client.search(for: "Suits") { _ in }
-        task?.resume()
-
-        XCTAssertEqual(session.completedURLs.first!.absoluteString, "https://itunes.apple.com/search?term=Suits&media=all")
+		let components = URLComponents(url: session.completedURLs[0], resolvingAgainstBaseURL: false)!
+		let queryItems = components.queryItems!
+		XCTAssertEqual(2, queryItems.count)
+		XCTAssertEqual(queryItems.first(where: { $0.name == "id" })!.value!, "909253")
+		XCTAssertEqual(queryItems.first(where: { $0.name == "country" })!.value!, "de")
     }
 }
