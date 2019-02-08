@@ -10,7 +10,7 @@ import Foundation
 
 /// The media type you want to search for. The default is all.
 public enum Media {
-  
+
   case movie(Entity?)
   case podcast(Entity?)
   case music(Entity?)
@@ -21,7 +21,7 @@ public enum Media {
   case software(Entity?)
   case eBook(Entity?)
   case all(Entity?)
-  
+
   fileprivate var value: String {
     switch self {
     case .movie:
@@ -46,7 +46,7 @@ public enum Media {
       return "all"
     }
   }
-  
+
   fileprivate var entity: Entity? {
     switch self {
     case .movie(let entity):
@@ -75,14 +75,14 @@ public enum Media {
 
 extension Media {
 
-  var parameters: [String : String] {
-    
-    var media = ["media" : value]
-    
+  var parameters: [String: String] {
+
+    var media = ["media": value]
+
     if let entity = entity?.parameter {
       media.unionInPlace(entity)
     }
-    
+
     return media
   }
 }

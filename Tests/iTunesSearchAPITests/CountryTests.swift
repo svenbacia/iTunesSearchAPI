@@ -11,7 +11,7 @@ import XCTest
 @testable import iTunesSearchAPI
 
 class CountryTests: XCTestCase {
-  
+
   func testCountryCodes() {
     XCTAssertEqual(Country.china.code, "cn")
     XCTAssertEqual(Country.netherlands.code, "nl")
@@ -29,5 +29,5 @@ class CountryTests: XCTestCase {
     XCTAssertEqual(Country.spain.code, "es")
     XCTAssertEqual(Country.switzerland.code, "ch")
   }
-    
+
 }

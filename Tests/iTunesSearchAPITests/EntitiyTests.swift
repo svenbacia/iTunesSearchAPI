@@ -11,7 +11,7 @@ import XCTest
 @testable import iTunesSearchAPI
 
 class EntitiyTests: XCTestCase {
-    
+
   func testEntityDescriptions() {
     XCTAssertEqual(Entity.movie.value, "movie")
     XCTAssertEqual(Entity.album.value, "album")
@@ -36,5 +36,5 @@ class EntitiyTests: XCTestCase {
     XCTAssertEqual(Entity.macSoftware.value, "macSoftware")
     XCTAssertEqual(Entity.eBook.value, "ebook")
   }
-    
+
 }

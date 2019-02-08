@@ -1,4 +1,0 @@
-project "iTunesSearchAPI.xcodeproj"
-scheme "iTunesSearchAPI-iOS"
-code_coverage true
-output_types ""

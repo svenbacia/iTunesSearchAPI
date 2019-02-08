@@ -20,22 +20,22 @@ class OptionsTests: XCTestCase {
     XCTAssertNil(options.language)
     XCTAssertNil(options.limit)
   }
-  
+
   func testNilParameters() {
     let options = Options()
     XCTAssertNil(options.parameters)
   }
-  
+
   func testAllParameters() {
     let options = Options(country: .germany,
                           limit: 20,
                           language: .english,
                           includeExplicitContent: true)
-    
+
     let parameters = options.parameters
-    
+
     XCTAssertNotNil(parameters)
-    
+
     XCTAssertEqual(parameters!["country"], "de")
     XCTAssertEqual(parameters!["limit"], "20")
     XCTAssertEqual(parameters!["lang"], "en_us")
