@@ -9,7 +9,7 @@
 import Foundation
 
 public extension iTunes {
-    public enum Error: Swift.Error {
+    enum Error: Swift.Error {
         case unknown
         case invalidSearchTerm
         case invalidURL

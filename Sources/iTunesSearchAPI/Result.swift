@@ -10,7 +10,7 @@ import Foundation
 
 // Nest `Result` to avoid collisions when imported.
 public extension iTunes {
-    public enum Result<T, U> {
+    enum Result<T, U> {
         case success(T)
         case failure(U)
 
